@@ -1,0 +1,16 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/portafolio/index.html",
+      "destination": "/portafolio",
+      "permanent": true
+    },
+    {
+      "source": "/portafolio.html",
+      "destination": "/portafolio",
+      "permanent": true
+    }
+  ]
+}
