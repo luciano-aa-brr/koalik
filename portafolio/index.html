@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luciano Aliaga | Desarrollador & Ciberseguridad</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        /* Clase personalizada para la rotación sutil del perfil */
+        .ImagenRotada { transform: rotate(3deg); }
+        .ImagenContenido { transform: rotate(-3deg) scale(1.1); }
+    </style>
+</head>
+<body class="bg-white text-[#2B2B2B]">
+
+    <nav class="p-6 max-w-7xl mx-auto relative">
+        <div class="flex justify-between items-center">
+            <a href="../index.html" class="text-[#4A444A] hover:text-[#BFA2DB] transition font-medium">
+                ← Volver a KoaLink
+            </a>
+
+            <button id="BotonMenu" class="md:hidden text-[#4A444A] focus:outline-none z-50">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path id="IconoMenu" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+
+            <div class="hidden md:flex items-center gap-6" id="MenuDesktop">
+                <div class="flex gap-4 border-r border-[#D9D9D9] pr-6">
+                    <a href="https://github.com/luciano-aa-brr" target="_blank" class="text-[#4A444A] hover:text-[#BFA2DB] transition">GitHub</a>
+                    <a href="https://www.linkedin.com/in/luciano-aliaga-0018a0268/" target="_blank" class="text-[#4A444A] hover:text-[#BFA2DB] transition">LinkedIn</a>
+                    <a href="https://www.instagram.com/koalink.cl" target="_blank" class="text-[#4A444A] hover:text-[#BFA2DB] transition">Instagram</a>
+                </div>
+                <a href="./doc/cv_LucianoAliaga.pdf" download class="bg-[#2B2B2B] text-white px-5 py-2.5 rounded-xl hover:bg-[#4A444A] transition text-sm font-bold flex items-center gap-2">
+                    Descargar CV
+                </a>
+            </div>
+        </div>
+
+        <div id="MenuMovil" class="hidden flex-col absolute top-20 left-6 right-6 bg-white border border-[#D9D9D9] p-6 rounded-2xl shadow-2xl z-40 gap-4 md:hidden">
+            <div class="flex flex-col gap-4">
+                <a href="https://github.com/luciano-aa-brr" target="_blank" class="text-lg font-semibold text-[#4A444A] border-b pb-2">GitHub</a>
+                <a href="https://www.linkedin.com/in/luciano-aliaga-0018a0268/" target="_blank" class="text-lg font-semibold text-[#4A444A] border-b pb-2">LinkedIn</a>
+                <a href="https://www.instagram.com/koalink.cl" target="_blank" class="text-lg font-semibold text-[#4A444A] border-b pb-2">Instagram</a>
+            </div>
+            <a href="./doc/cv_LucianoAliaga.pdf" download class="bg-[#BFA2DB] text-white text-center py-4 rounded-xl font-bold text-lg shadow-md">
+                Descargar CV
+            </a>
+        </div>
+    </nav>
+
+    <section class="py-16 px-6">
+        <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-12">
+            <div class="w-56 h-56 md:w-64 md:h-64 rounded-2xl overflow-hidden border-4 border-[#BFA2DB] shadow-2xl ImagenRotada">
+                <img src="../portafolio/img/portada.png" alt="Luciano Aliaga" class="w-full h-full object-cover ImagenContenido">
+            </div>
+            
+            <div class="flex-1 text-center md:text-left">
+                <span class="bg-[#BFA2DB]/10 text-[#BFA2DB] px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest">Luciano Aliaga</span>
+                <h1 class="text-5xl font-extrabold mt-4 mb-4 text-[#2B2B2B]">Desarrollador & Ciberseguridad</h1>
+                <p class="text-[#4A444A] text-lg leading-relaxed">
+                    Estudiante de **Analista Programador** apasionado por la infraestructura segura y el desarrollo web moderno. Especializado en crear soluciones que combinan rendimiento y protección de datos.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-[#F9F9F9] px-6">
+        <div class="max-w-5xl mx-auto">
+            <h3 class="text-3xl font-bold mb-10 text-center">Certificaciones Cisco Networking Academy</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <div class="bg-white p-6 rounded-xl border border-[#D9D9D9] hover:border-[#BFA2DB] transition shadow-sm">
+                    <h4 class="font-bold text-[#BFA2DB] mb-2">Dispositivos de Red y Configuración Inicial</h4>
+                    <p class="text-xs text-gray-500 uppercase font-semibold">Emitido: 06 feb 2025</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl border border-[#D9D9D9] hover:border-[#BFA2DB] transition shadow-sm">
+                    <h4 class="font-bold text-[#BFA2DB]">Conceptos Básicos de Redes</h4>
+                    <p class="text-xs text-gray-500 uppercase font-semibold">Emitido: 17 ene 2025</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl border border-[#D9D9D9] hover:border-[#BFA2DB] transition shadow-sm">
+                    <h4 class="font-bold text-[#BFA2DB]">IT Essentials</h4>
+                    <p class="text-xs text-gray-500 uppercase font-semibold">Emitido: 05 jul 2024</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl border border-[#D9D9D9] hover:border-[#BFA2DB] transition shadow-sm">
+                    <h4 class="font-bold text-[#BFA2DB]">Introducción a la Ciberseguridad</h4>
+                    <p class="text-xs text-gray-500 uppercase font-semibold">Emitido: 25 jun 2024</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl border border-[#D9D9D9] hover:border-[#BFA2DB] transition shadow-sm">
+                    <h4 class="font-bold text-[#BFA2DB]">Fundamentos de Python 1 y 2</h4>
+                    <p class="text-xs text-gray-500 uppercase font-semibold">Mayo - Junio 2024</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-[#2B2B2B] text-white py-16 px-6 text-center">
+        <p class="text-[#D9D9D9] mb-8">© 2026 Luciano Aliaga | Desarrollado con HTML y Tailwind CSS</p>
+        <div class="flex justify-center gap-6">
+             <a href="https://wa.me/56966888378" target="_blank" class="bg-[#BFA2DB] text-[#2B2B2B] font-bold px-8 py-3 rounded-xl hover:scale-105 transition transform">Contactar</a>
+        </div>
+    </footer>
+
+    <script>
+        const BotonMenu = document.getElementById('BotonMenu');
+        const MenuMovil = document.getElementById('MenuMovil');
+
+        BotonMenu.addEventListener('click', () => {
+            // Alterna la visibilidad del menú móvil
+            MenuMovil.classList.toggle('hidden');
+            MenuMovil.classList.toggle('flex');
+        });
+
+        // Cerrar el menú si se hace clic fuera de él para mejorar la UX
+        window.addEventListener('click', (e) => {
+            if (!BotonMenu.contains(e.target) && !MenuMovil.contains(e.target)) {
+                MenuMovil.classList.add('hidden');
+                MenuMovil.classList.remove('flex');
+            }
+        });
+    </script>
+
+</body>
+</html>
