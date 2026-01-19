@@ -1,13 +1,14 @@
-// Este script inyecta automáticamente Speed Insights de Vercel
 (function() {
-    // 1. Inicialización de la cola de Speed Insights
+    // 1. Inicialización de Vercel Speed Insights
     window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
 
-    // 2. Creación dinámica del tag de script
+    // 2. Creación dinámica del tag
     const script = document.createElement('script');
     script.src = '/_vercel/speed-insights/script.js';
     script.defer = true;
 
-    // 3. Insertarlo al final del body
+    // 3. Inserción al final del body
     document.body.appendChild(script);
+    
+    console.log("KoaLink: Speed Insights cargado.");
 })();
