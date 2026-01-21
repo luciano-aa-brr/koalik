@@ -1,22 +1,26 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
+<html lang="es" class="scroll-smooth snap-y snap-mandatory">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Luciano Aliaga | Desarrollador & Ciberseguridad</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; }
         /* Clase personalizada para la rotación sutil del perfil */
         .ImagenRotada { transform: rotate(3deg); }
         .ImagenContenido { transform: rotate(-3deg) scale(1.1); }
+        
+        /* Ajuste para que el scroll snap no oculte contenido detrás del nav */
+        section { scroll-margin-top: 0px; }
     </style>
 </head>
-<body class="bg-white text-[#2B2B2B]">
+<body class="bg-white text-[#2B2B2B] overflow-x-hidden">
 
-    <nav class="p-6 max-w-7xl mx-auto relative">
-        <div class="flex justify-between items-center">
+    <nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-transparent">
+        <div class="p-6 max-w-7xl mx-auto flex justify-between items-center">
             <a href="../index.html" class="text-[#4A444A] hover:text-[#BFA2DB] transition font-medium">
                 ← Volver a KoaLink
             </a>
@@ -31,10 +35,11 @@
                 <div class="flex gap-4 border-r border-[#D9D9D9] pr-6">
                     <a href="https://github.com/luciano-aa-brr" target="_blank" class="text-[#4A444A] hover:text-[#BFA2DB] transition">GitHub</a>
                     <a href="https://www.linkedin.com/in/luciano-aliaga-0018a0268/" target="_blank" class="text-[#4A444A] hover:text-[#BFA2DB] transition">LinkedIn</a>
-                    <a href="https://www.instagram.com/tupla_tech/" target="_blank" class="text-[#4A444A] hover:text-[#BFA2DB] transition">Instagram</a>
+                    <a href="https://www.instagram.com/koalinkdev/" target="_blank" class="text-[#4A444A] hover:text-[#BFA2DB] transition">Instagram</a>
                 </div>
                 <div>
                     <a href="https://wa.me/56966888378" target="_blank" class="bg-[#BFA2DB] text-white font-bold px-6 py-2 rounded-full hover:shadow-lg transition">Contactar</a>
+                </div>
             </div>
         </div>
 
@@ -46,16 +51,17 @@
             </div>
             <div class="mt-4">
                 <a href="https://wa.me/56966888378" target="_blank" class="bg-[#BFA2DB] text-white font-bold w-full px-6 py-2 rounded-full hover:shadow-lg transition block text-center">Contactar</a>
+            </div>
         </div>
     </nav>
 
-    <section class="py-16 px-6">
+    <section class="min-h-screen snap-start flex flex-col justify-center items-center px-6 pt-20">
         <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-12">
-            <div class="w-56 h-56 md:w-64 md:h-64 rounded-2xl overflow-hidden border-4 border-[#BFA2DB] shadow-2xl ImagenRotada hover:scale-105 transition-transform duration-500">
+            <div data-aos="fade-right" class="w-56 h-56 md:w-64 md:h-64 rounded-2xl overflow-hidden border-4 border-[#BFA2DB] shadow-2xl ImagenRotada hover:scale-105 transition-transform duration-500 hover:border-[#A374C7]">
                 <img src="../portafolio/img/portada.png" alt="Luciano Aliaga" class="w-full h-full object-cover ImagenContenido">
             </div>
             
-            <div class="flex-1 text-center md:text-left">
+            <div data-aos="fade-left" class="flex-1 text-center md:text-left">
                 <span class="bg-[#BFA2DB]/10 text-[#BFA2DB] px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest">Luciano Aliaga</span>
                 <h1 class="text-5xl font-extrabold mt-4 mb-4 text-[#2B2B2B]">Desarrollador & Ciberseguridad</h1>
                 <p class="text-[#4A444A] text-lg leading-relaxed">
@@ -65,58 +71,67 @@
         </div>
     </section>
 
-    <section class="py-20 bg-[#F9F9F9] px-6">
-        <div class="max-w-5xl mx-auto">
-            <h3 class="text-3xl font-bold mb-10 text-center">Certificaciones</h3>
-            <h4 class="text-xl font-bold mb-6 text-center">Cisco Networking Academy</h4>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <section class="min-h-screen snap-start flex flex-col justify-center items-center py-20 bg-[#F9F9F9] px-6">
+        <div class="max-w-5xl mx-auto w-full">
+            <div data-aos="fade-down">
+                <h3 class="text-3xl font-bold mb-4 text-center">Certificaciones</h3>
+                <h4 class="text-xl font-bold mb-10 text-center text-[#4A444A]">Cisco Networking Academy</h4>
+            </div>
 
-                <div class="bg-white p-6 rounded-xl border border-[#D9D9D9] hover:border-[#BFA2DB] transition shadow-sm">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div data-aos="zoom-in" data-aos-delay="100" class="bg-white p-6 rounded-xl border border-[#D9D9D9] hover:border-[#BFA2DB] transition shadow-sm">
                     <h4 class="font-bold text-[#BFA2DB] mb-2">Dispositivos de Red y Configuración Inicial</h4>
                     <p class="text-xs text-gray-500 uppercase font-semibold">Emitido: 06 feb 2025</p>
                 </div>
-
-                <div class="bg-white p-6 rounded-xl border border-[#D9D9D9] hover:border-[#BFA2DB] transition shadow-sm">
-                    <h4 class="font-bold text-[#BFA2DB]">Conceptos Básicos de Redes</h4>
+                <div data-aos="zoom-in" data-aos-delay="200" class="bg-white p-6 rounded-xl border border-[#D9D9D9] hover:border-[#BFA2DB] transition shadow-sm">
+                    <h4 class="font-bold text-[#BFA2DB] mb-2">Conceptos Básicos de Redes</h4>
                     <p class="text-xs text-gray-500 uppercase font-semibold">Emitido: 17 ene 2025</p>
                 </div>
-
-                <div class="bg-white p-6 rounded-xl border border-[#D9D9D9] hover:border-[#BFA2DB] transition shadow-sm">
-                    <h4 class="font-bold text-[#BFA2DB]">IT Essentials</h4>
+                <div data-aos="zoom-in" data-aos-delay="300" class="bg-white p-6 rounded-xl border border-[#D9D9D9] hover:border-[#BFA2DB] transition shadow-sm">
+                    <h4 class="font-bold text-[#BFA2DB] mb-2">IT Essentials</h4>
                     <p class="text-xs text-gray-500 uppercase font-semibold">Emitido: 05 jul 2024</p>
                 </div>
-
-                <div class="bg-white p-6 rounded-xl border border-[#D9D9D9] hover:border-[#BFA2DB] transition shadow-sm">
-                    <h4 class="font-bold text-[#BFA2DB]">Introducción a la Ciberseguridad</h4>
+                <div data-aos="zoom-in" data-aos-delay="400" class="bg-white p-6 rounded-xl border border-[#D9D9D9] hover:border-[#BFA2DB] transition shadow-sm">
+                    <h4 class="font-bold text-[#BFA2DB] mb-2">Introducción a la Ciberseguridad</h4>
                     <p class="text-xs text-gray-500 uppercase font-semibold">Emitido: 25 jun 2024</p>
                 </div>
-
-                <div class="bg-white p-6 rounded-xl border border-[#D9D9D9] hover:border-[#BFA2DB] transition shadow-sm">
-                    <h4 class="font-bold text-[#BFA2DB]">Fundamentos de Python 1 y 2</h4>
+                <div data-aos="zoom-in" data-aos-delay="500" class="bg-white p-6 rounded-xl border border-[#D9D9D9] hover:border-[#BFA2DB] transition shadow-sm">
+                    <h4 class="font-bold text-[#BFA2DB] mb-2">Fundamentos de Python 1 y 2</h4>
                     <p class="text-xs text-gray-500 uppercase font-semibold">Mayo - Junio 2024</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="bg-[#2B2B2B] text-white py-16 px-6 text-center">
-        <p class="text-[#D9D9D9] mb-8">© 2026 KoaLink | Desarrollado con HTML y Tailwind CSS</p>
-        <div class="flex justify-center gap-6">
-             <a href="https://wa.me/56966888378" target="_blank" class="bg-[#BFA2DB] text-[#2B2B2B] font-bold px-8 py-3 rounded-xl hover:scale-105 transition transform">Contactar</a>
+    <footer class="min-h-screen snap-start flex flex-col justify-center items-center bg-[#2B2B2B] text-white py-16 px-6 text-center">
+        <div data-aos="fade-up">
+            <p class="text-[#D9D9D9] mb-8">© 2026 KoaLink | Desarrollado con HTML y Tailwind CSS</p>
+            <div class="flex justify-center gap-6">
+                 <a href="https://wa.me/56966888378" target="_blank" class="bg-[#BFA2DB] text-[#2B2B2B] font-bold px-12 py-4 rounded-xl hover:scale-105 transition transform shadow-xl">
+                    Hablemos por WhatsApp
+                </a>
+            </div>
         </div>
     </footer>
 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
+        // Inicializar AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+
+        // Lógica del Menú Móvil (Tu código original)
         const BotonMenu = document.getElementById('BotonMenu');
         const MenuMovil = document.getElementById('MenuMovil');
 
         BotonMenu.addEventListener('click', () => {
-            // Alterna la visibilidad del menú móvil
             MenuMovil.classList.toggle('hidden');
             MenuMovil.classList.toggle('flex');
         });
 
-        // Cerrar el menú si se hace clic fuera de él para mejorar la UX
         window.addEventListener('click', (e) => {
             if (!BotonMenu.contains(e.target) && !MenuMovil.contains(e.target)) {
                 MenuMovil.classList.add('hidden');
