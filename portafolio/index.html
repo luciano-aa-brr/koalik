@@ -26,6 +26,11 @@
         footer {
             position: relative;
         }
+
+        /* Estilo para el efecto glitch sutil */
+        #player-name:hover {
+            text-shadow: 2px 0 #BFA2DB, -2px 0 #ff00ff;
+        }
     </style>
 </head>
 
@@ -88,8 +93,7 @@
             <div class="flex-1 text-center md:text-left" data-aos="fade-up" data-aos-delay="200">
                 <div
                     class="inline-flex items-center gap-2 bg-[#BFA2DB]/10 px-4 py-1.5 rounded-full mb-4 border border-[#BFA2DB]/20">
-                    <span class="text-[10px] font-black text-[#BFA2DB] uppercase tracking-widest">Analista Programador •
-                        LVL. 04</span>
+                    <span class="text-[10px] font-black text-[#BFA2DB] uppercase tracking-widest">Analista Programador</span>
                 </div>
 
                 <h1 class="text-4xl md:text-6xl font-black text-[#2B2B2B] mb-4 leading-tight">
@@ -111,97 +115,67 @@
         </div>
     </section>
 
-    <section id="stats" class="min-h-screen flex flex-col justify-center py-24 px-6">
-        <div class="max-w-4xl mx-auto w-full">
-            <div data-aos="fade-up" class="text-center mb-12">
-                <h2 class="text-3xl font-black text-[#2B2B2B] uppercase tracking-tighter italic">
-                    Ventana de Estado
-                </h2>
-                <p class="text-[#BFA2DB] font-bold text-xs uppercase tracking-widest">
-                    Evolución del Desarrollador
-                </p>
+    <section id="stats" class="min-h-screen flex flex-col justify-center py-24 px-6 bg-[#f8f9fa]">
+        <div class="max-w-5xl mx-auto w-full">
+
+            <div data-aos="fade-up" class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-black text-[#2B2B2B] uppercase italic tracking-tighter">Panel de
+                    Atributos</h2>
+                <p class="text-[#BFA2DB] font-bold text-sm md:text-base uppercase tracking-widest">Sincronización con el
+                    Sistema</p>
+                <div class="w-16 h-1 bg-[#BFA2DB] mx-auto mt-4 rounded-full"></div>
             </div>
 
-            <div data-aos="zoom-in"
-                class="bg-[#2B2B2B] text-white p-8 md:p-12 rounded-[2.5rem] shadow-2xl border-4 border-[#BFA2DB] relative overflow-hidden">
-                <div class="absolute -top-24 -right-24 w-64 h-64 bg-[#BFA2DB]/10 rounded-full blur-3xl"></div>
+            <div id="status-window"
+                class="bg-[#1a1a1a] border-2 border-[#BFA2DB] p-8 md:p-12 rounded-2xl shadow-[0_0_50px_rgba(191,162,219,0.2)] text-white font-mono relative overflow-hidden opacity-0 transition-opacity duration-1000">
 
-                <div
-                    class="flex flex-col md:flex-row justify-between items-center border-b border-gray-700 pb-8 mb-8 gap-6">
-                    <div class="text-center md:text-left">
-                        <p class="text-[#BFA2DB] text-xs font-black uppercase tracking-widest mb-1">
-                            Clase
-                        </p>
-                        <h3 class="text-2xl font-bold">Analista Programador</h3>
-                    </div>
-                    <div class="text-center">
-                        <p class="text-[#BFA2DB] text-xs font-black uppercase tracking-widest mb-1">
-                            Nivel
-                        </p>
-                        <h3 class="text-4xl font-black italic">
-                            LVL. 04
-                            <span class="text-sm font-normal not-italic text-gray-500">/ Semestre</span>
-                        </h3>
-                    </div>
-                    <div class="text-center md:text-right">
-                        <p class="text-[#BFA2DB] text-xs font-black uppercase tracking-widest mb-1">
-                            Rango
-                        </p>
-                        <h3 class="text-2xl font-bold">Encargado TI</h3>
-                    </div>
-                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-20">
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
-                    <div class="space-y-2">
-                        <div class="flex justify-between text-sm font-bold uppercase tracking-tighter">
-                            <span>Backend (Python / SQL)</span>
-                            <span class="text-[#BFA2DB]">75%</span>
+                    <div class="space-y-10">
+                        <div class="border-b border-[#BFA2DB]/30 pb-8">
+                            <div class="flex justify-between items-start mb-6">
+                                <div>
+                                    <h3
+                                        class="text-[#BFA2DB] text-xs md:text-sm uppercase tracking-[0.4em] mb-2 animate-pulse font-black">
+                                        Estado: Activo</h3>
+                                    <span
+                                        class="text-3xl md:text-5xl font-black italic uppercase tracking-tighter hover:animate-pulse cursor-default transition-all hover:text-[#BFA2DB]"
+                                        id="player-name">
+                                        Luciano Aliaga
+                                    </span>
+                                </div>
+                                <div class="text-right">
+                                    <span class="text-[#BFA2DB] font-black text-3xl md:text-5xl italic">LVL. <span
+                                            id="player-lvl">--</span></span>
+                                </div>
+                            </div>
+                            <div class="inline-block bg-[#BFA2DB]/10 border-l-4 border-[#BFA2DB] px-6 py-3">
+                                <p class="text-xs md:text-sm text-gray-300 uppercase font-black tracking-widest">
+                                    Encargado de TI / Analista Programador
+                                </p>
+                            </div>
                         </div>
-                        <div class="h-2 bg-gray-800 rounded-full overflow-hidden">
-                            <div class="h-full bg-[#BFA2DB] shadow-[0_0_10px_#BFA2DB] transition-all duration-1000"
-                                style="width: 75%"></div>
+
+                        <div class="bg-black/40 p-6 rounded-2xl border border-[#BFA2DB]/20">
+                            <p class="text-xs md:text-sm text-[#BFA2DB] uppercase mb-4 font-black tracking-[0.2em]">
+                                Registro de Misiones:</p>
+                            <ul id="recent-achievements"
+                                class="text-xs md:text-sm space-y-3 text-gray-400 font-bold uppercase italic">
+                            </ul>
                         </div>
                     </div>
 
-                    <div class="space-y-2">
-                        <div class="flex justify-between text-sm font-bold uppercase tracking-tighter">
-                            <span>Redes & Infraestructura</span>
-                            <span class="text-[#BFA2DB]">85%</span>
-                        </div>
-                        <div class="h-2 bg-gray-800 rounded-full overflow-hidden">
-                            <div class="h-full bg-[#BFA2DB] shadow-[0_0_10px_#BFA2DB] transition-all duration-1000"
-                                style="width: 85%"></div>
-                        </div>
-                    </div>
-
-                    <div class="space-y-2">
-                        <div class="flex justify-between text-sm font-bold uppercase tracking-tighter">
-                            <span>Ciberseguridad</span>
-                            <span class="text-[#BFA2DB]">70%</span>
-                        </div>
-                        <div class="h-2 bg-gray-800 rounded-full overflow-hidden">
-                            <div class="h-full bg-[#BFA2DB] shadow-[0_0_10px_#BFA2DB] transition-all duration-1000"
-                                style="width: 70%"></div>
-                        </div>
-                    </div>
-
-                    <div class="space-y-2">
-                        <div class="flex justify-between text-sm font-bold uppercase tracking-tighter">
-                            <span>Frontend (Tailwind / JS)</span>
-                            <span class="text-[#BFA2DB]">65%</span>
-                        </div>
-                        <div class="h-2 bg-gray-800 rounded-full overflow-hidden">
-                            <div class="h-full bg-[#BFA2DB] shadow-[0_0_10px_#BFA2DB] transition-all duration-1000"
-                                style="width: 65%"></div>
+                    <div class="flex flex-col justify-center space-y-8">
+                        <h4 class="text-xs md:text-sm text-gray-500 uppercase tracking-[0.3em]">Distribución de
+                            Atributos:</h4>
+                        <div id="skills-container" class="space-y-8">
                         </div>
                     </div>
                 </div>
 
-                <div class="mt-12 pt-8 border-t border-gray-700">
-                    <p class="text-[10px] text-gray-500 uppercase tracking-widest text-center">
-                        Habilidad Pasiva:
-                        <span class="text-white">Aprendizaje Acelerado (Estudiante Santo Tomás)</span>
-                    </p>
+                <div class="absolute bottom-6 right-8 opacity-5 pointer-events-none hidden md:block">
+                    <span class="text-6xl font-black italic uppercase tracking-tighter text-[#BFA2DB]">KoaLink
+                        System</span>
                 </div>
             </div>
         </div>
@@ -298,136 +272,207 @@
     </section>
 
     <section id="certificaciones" class="min-h-screen flex flex-col justify-center py-24 px-6 bg-[#f8f9fa]">
-    <div class="max-w-6xl mx-auto w-full">
+        <div class="max-w-6xl mx-auto w-full">
 
-        <div data-aos="fade-up" class="text-center mb-16">
-            <h2 class="text-4xl font-black text-[#2B2B2B] uppercase italic tracking-tighter">
-                Registro de Misiones
-            </h2>
-            <p class="text-[#BFA2DB] font-bold text-sm uppercase tracking-widest">Estado Actual: Jugador de Clase S</p>
-            <div class="w-16 h-1 bg-[#BFA2DB] mx-auto mt-4 rounded-full"></div>
-        </div>
-
-        <div class="mb-20">
-            <div class="flex items-center gap-4 mb-10">
-                <div class="bg-[#BFA2DB] p-2 rounded-lg shadow-lg shadow-[#BFA2DB]/20">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2H2v10h10V2z"/><path d="M22 12H12v10h10V12z"/><path d="M12 12H2v10h10V12z"/><path d="M22 2H12v10h10V2z"/></svg>
-                </div>
-                <div>
-                    <h3 class="text-2xl font-black text-[#2B2B2B]">Cisco Academy</h3>
-                    <p class="text-sm font-bold text-gray-400 uppercase tracking-widest">Entrenamiento de Infraestructura</p>
-                </div>
+            <div data-aos="fade-up" class="text-center mb-16">
+                <h2 class="text-4xl font-black text-[#2B2B2B] uppercase italic tracking-tighter">
+                    Registro de Misiones
+                </h2>
+                <p class="text-[#BFA2DB] font-bold text-sm uppercase tracking-widest">Estado Actual: Jugador de Clase S
+                </p>
+                <div class="w-16 h-1 bg-[#BFA2DB] mx-auto mt-4 rounded-full"></div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="group bg-[#2B2B2B] p-8 rounded-[2rem] border border-gray-800 hover:border-[#BFA2DB] transition-all relative overflow-hidden">
-                    <div class="flex justify-between items-start mb-6">
-                        <span class="text-xs font-black bg-[#BFA2DB]/10 text-[#BFA2DB] border border-[#BFA2DB]/20 px-3 py-1 rounded-full uppercase">Clase: Redes</span>
-                        <span class="text-xs font-black text-gray-500 italic">RANK: A</span>
+            <div class="mb-20">
+                <div class="flex items-center gap-4 mb-10">
+                    <div class="bg-[#BFA2DB] p-2 rounded-lg shadow-lg shadow-[#BFA2DB]/20">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+                            stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2H2v10h10V2z" />
+                            <path d="M22 12H12v10h10V12z" />
+                            <path d="M12 12H2v10h10V12z" />
+                            <path d="M22 2H12v10h10V2z" />
+                        </svg>
                     </div>
-                    <h4 class="text-white font-bold text-xl mb-4 group-hover:text-[#BFA2DB] transition">Dispositivos de Red</h4>
-                    <p class="text-gray-400 text-sm leading-relaxed mb-6">Configuración de routers y switches. Gestión de conectividad institucional.</p>
-                    <div class="flex items-center gap-2 text-xs font-bold text-[#BFA2DB]">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-                        LOGRO OBTENIDO (2025)
-                    </div>
-                </div>
-
-                <div class="group bg-[#2B2B2B] p-8 rounded-[2rem] border border-gray-800 hover:border-[#BFA2DB] transition-all relative overflow-hidden">
-                    <div class="flex justify-between items-start mb-6">
-                        <span class="text-xs font-black bg-[#BFA2DB]/10 text-[#BFA2DB] border border-[#BFA2DB]/20 px-3 py-1 rounded-full uppercase">Clase: Desarrollo</span>
-                        <span class="text-xs font-black text-yellow-500 italic">RANK: S</span>
-                    </div>
-                    <h4 class="text-white font-bold text-xl mb-4 group-hover:text-[#BFA2DB] transition">Python Fundamental (1 & 2)</h4>
-                    <p class="text-gray-400 text-sm leading-relaxed mb-6">Automatización de procesos y lógica de datos. Entrenamiento de 70 horas.</p>
-                    <div class="flex items-center gap-2 text-xs font-bold text-[#BFA2DB]">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-                        LOGRO OBTENIDO (2024)
+                    <div>
+                        <h3 class="text-2xl font-black text-[#2B2B2B]">Cisco Academy</h3>
+                        <p class="text-sm font-bold text-gray-400 uppercase tracking-widest">Entrenamiento de
+                            Infraestructura</p>
                     </div>
                 </div>
 
-                <div class="group bg-[#2B2B2B] p-8 rounded-[2rem] border border-gray-800 hover:border-[#BFA2DB] transition-all relative overflow-hidden">
-                    <div class="flex justify-between items-start mb-6">
-                        <span class="text-xs font-black bg-[#BFA2DB]/10 text-[#BFA2DB] border border-[#BFA2DB]/20 px-3 py-1 rounded-full uppercase">Clase: Seguridad</span>
-                        <span class="text-xs font-black text-gray-500 italic">RANK: A</span>
-                    </div>
-                    <h4 class="text-white font-bold text-xl mb-4 group-hover:text-[#BFA2DB] transition">Ciberseguridad</h4>
-                    <p class="text-gray-400 text-sm leading-relaxed mb-6">Protección de infraestructuras y gestión de vulnerabilidades digitales.</p>
-                    <div class="flex items-center gap-2 text-xs font-bold text-[#BFA2DB]">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-                        LOGRO OBTENIDO
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="mb-20">
-            <div class="flex items-center gap-4 mb-10">
-                <div class="bg-[#BFA2DB] p-2 rounded-lg shadow-lg shadow-[#BFA2DB]/20">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>
-                </div>
-                <div>
-                    <h3 class="text-2xl font-black text-[#2B2B2B]">Udemy Mastery</h3>
-                    <p class="text-sm font-bold text-gray-400 uppercase tracking-widest">Habilidades Especiales Desbloqueadas</p>
-                </div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="group bg-[#2B2B2B] p-8 rounded-[2rem] border border-gray-800 hover:border-[#BFA2DB] hover:shadow-[0_0_30px_rgba(191,162,219,0.15)] transition-all relative overflow-hidden">
-                    <div class="flex justify-between items-start mb-6 text-xs font-black">
-                        <span class="bg-[#BFA2DB]/10 text-[#BFA2DB] border border-[#BFA2DB]/20 px-3 py-1 rounded-full uppercase">Clase: Seguridad</span>
-                        <span class="text-yellow-500 italic uppercase">RANK: S</span>
-                    </div>
-                    <h4 class="text-white font-bold text-xl mb-4 group-hover:text-[#BFA2DB] transition uppercase leading-tight">Penetration Testing & Ethical Hacking</h4>
-                    <p class="text-gray-400 text-sm leading-relaxed mb-6">Uso de Python 3 para auditorías ofensivas y defensa de servidores escolares.</p>
-                    <div class="flex flex-col gap-2">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div
+                        class="group bg-[#2B2B2B] p-8 rounded-[2rem] border border-gray-800 hover:border-[#BFA2DB] transition-all relative overflow-hidden">
+                        <div class="flex justify-between items-start mb-6">
+                            <span
+                                class="text-xs font-black bg-[#BFA2DB]/10 text-[#BFA2DB] border border-[#BFA2DB]/20 px-3 py-1 rounded-full uppercase">Clase:
+                                Redes</span>
+                            <span class="text-xs font-black text-gray-500 italic">RANK: A</span>
+                        </div>
+                        <h4 class="text-white font-bold text-xl mb-4 group-hover:text-[#BFA2DB] transition">Dispositivos
+                            de Red</h4>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-6">Configuración de routers y switches.
+                            Gestión de conectividad institucional.</p>
                         <div class="flex items-center gap-2 text-xs font-bold text-[#BFA2DB]">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-                            LOGRO OBTENIDO (JUL 2024)
-                        </div>
-                        <div class="flex justify-between items-center mt-1">
-                            <span class="text-[10px] text-gray-600 font-mono uppercase">ID: UC-8ae82ac8</span>
-                            <a href="https://www.udemy.com/certificate/UC-8ae82ac8-050a-49e2-b46e-0619589c7f2e/" target="_blank" class="text-gray-500 hover:text-white transition-colors">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
-                            </a>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M20 6 9 17l-5-5" />
+                            </svg>
+                            LOGRO OBTENIDO (2025)
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
 
-        <div class="mb-20">
-            <div class="flex items-center gap-4 mb-10">
-                <div class="bg-[#BFA2DB] p-2 rounded-lg shadow-lg shadow-[#BFA2DB]/20">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg>
-                </div>
-                <div>
-                    <h3 class="text-2xl font-black text-[#2B2B2B]">Código Facilito</h3>
-                    <p class="text-sm font-bold text-gray-400 uppercase tracking-widest">Dominio de Herramientas</p>
-                </div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="group bg-[#2B2B2B] p-8 rounded-[2rem] border border-gray-800 hover:border-[#BFA2DB] transition-all relative overflow-hidden">
-                    <div class="flex justify-between items-start mb-6">
-                        <span class="text-xs font-black bg-[#BFA2DB]/10 text-[#BFA2DB] border border-[#BFA2DB]/20 px-3 py-1 rounded-full uppercase">Clase: Git</span>
-                        <span class="text-xs font-black text-gray-500 italic">RANK: A</span>
-                    </div>
-                    <h4 class="text-white font-bold text-xl mb-4 group-hover:text-[#BFA2DB] transition">Curso Profesional de Git</h4>
-                    <p class="text-gray-400 text-sm leading-relaxed mb-6">Gestión de ramas y flujos colaborativos para proyectos como NexStore.</p>
-                    <div class="flex flex-col gap-2">
+                    <div
+                        class="group bg-[#2B2B2B] p-8 rounded-[2rem] border border-gray-800 hover:border-[#BFA2DB] transition-all relative overflow-hidden">
+                        <div class="flex justify-between items-start mb-6">
+                            <span
+                                class="text-xs font-black bg-[#BFA2DB]/10 text-[#BFA2DB] border border-[#BFA2DB]/20 px-3 py-1 rounded-full uppercase">Clase:
+                                Desarrollo</span>
+                            <span class="text-xs font-black text-yellow-500 italic">RANK: S</span>
+                        </div>
+                        <h4 class="text-white font-bold text-xl mb-4 group-hover:text-[#BFA2DB] transition">Python
+                            Fundamental (1 & 2)</h4>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-6">Automatización de procesos y lógica de
+                            datos. Entrenamiento de 70 horas.</p>
                         <div class="flex items-center gap-2 text-xs font-bold text-[#BFA2DB]">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-                            LOGRO OBTENIDO (DIC 2025)
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M20 6 9 17l-5-5" />
+                            </svg>
+                            LOGRO OBTENIDO (2024)
                         </div>
-                        <span class="text-[10px] text-gray-600 font-mono">ID: fa21a839</span>
+                    </div>
+
+                    <div
+                        class="group bg-[#2B2B2B] p-8 rounded-[2rem] border border-gray-800 hover:border-[#BFA2DB] transition-all relative overflow-hidden">
+                        <div class="flex justify-between items-start mb-6">
+                            <span
+                                class="text-xs font-black bg-[#BFA2DB]/10 text-[#BFA2DB] border border-[#BFA2DB]/20 px-3 py-1 rounded-full uppercase">Clase:
+                                Seguridad</span>
+                            <span class="text-xs font-black text-gray-500 italic">RANK: A</span>
+                        </div>
+                        <h4 class="text-white font-bold text-xl mb-4 group-hover:text-[#BFA2DB] transition">
+                            Ciberseguridad</h4>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-6">Protección de infraestructuras y gestión
+                            de vulnerabilidades digitales.</p>
+                        <div class="flex items-center gap-2 text-xs font-bold text-[#BFA2DB]">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M20 6 9 17l-5-5" />
+                            </svg>
+                            LOGRO OBTENIDO
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-    </div>
-</section>
+            <div class="mb-20">
+                <div class="flex items-center gap-4 mb-10">
+                    <div class="bg-[#BFA2DB] p-2 rounded-lg shadow-lg shadow-[#BFA2DB]/20">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+                            stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10" />
+                            <path d="m9 12 2 2 4-4" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-black text-[#2B2B2B]">Udemy Mastery</h3>
+                        <p class="text-sm font-bold text-gray-400 uppercase tracking-widest">Habilidades Especiales
+                            Desbloqueadas</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div
+                        class="group bg-[#2B2B2B] p-8 rounded-[2rem] border border-gray-800 hover:border-[#BFA2DB] hover:shadow-[0_0_30px_rgba(191,162,219,0.15)] transition-all relative overflow-hidden">
+                        <div class="flex justify-between items-start mb-6 text-xs font-black">
+                            <span
+                                class="bg-[#BFA2DB]/10 text-[#BFA2DB] border border-[#BFA2DB]/20 px-3 py-1 rounded-full uppercase">Clase:
+                                Seguridad</span>
+                            <span class="text-yellow-500 italic uppercase">RANK: S</span>
+                        </div>
+                        <h4
+                            class="text-white font-bold text-xl mb-4 group-hover:text-[#BFA2DB] transition uppercase leading-tight">
+                            Penetration Testing & Ethical Hacking</h4>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-6">Uso de Python 3 para auditorías ofensivas
+                            y defensa de servidores escolares.</p>
+                        <div class="flex flex-col gap-2">
+                            <div class="flex items-center gap-2 text-xs font-bold text-[#BFA2DB]">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M20 6 9 17l-5-5" />
+                                </svg>
+                                LOGRO OBTENIDO (JUL 2024)
+                            </div>
+                            <div class="flex justify-between items-center mt-1">
+                                <span class="text-[10px] text-gray-600 font-mono uppercase">ID: UC-8ae82ac8</span>
+                                <a href="https://www.udemy.com/certificate/UC-8ae82ac8-050a-49e2-b46e-0619589c7f2e/"
+                                    target="_blank" class="text-gray-500 hover:text-white transition-colors">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <path d="M15 3h6v6" />
+                                        <path d="M10 14 21 3" />
+                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-20">
+                <div class="flex items-center gap-4 mb-10">
+                    <div class="bg-[#BFA2DB] p-2 rounded-lg shadow-lg shadow-[#BFA2DB]/20">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+                            stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m18 16 4-4-4-4" />
+                            <path d="m6 8-4 4 4 4" />
+                            <path d="m14.5 4-5 16" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-black text-[#2B2B2B]">Código Facilito</h3>
+                        <p class="text-sm font-bold text-gray-400 uppercase tracking-widest">Dominio de Herramientas</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div
+                        class="group bg-[#2B2B2B] p-8 rounded-[2rem] border border-gray-800 hover:border-[#BFA2DB] transition-all relative overflow-hidden">
+                        <div class="flex justify-between items-start mb-6">
+                            <span
+                                class="text-xs font-black bg-[#BFA2DB]/10 text-[#BFA2DB] border border-[#BFA2DB]/20 px-3 py-1 rounded-full uppercase">Clase:
+                                Git</span>
+                            <span class="text-xs font-black text-gray-500 italic">RANK: A</span>
+                        </div>
+                        <h4 class="text-white font-bold text-xl mb-4 group-hover:text-[#BFA2DB] transition">Curso
+                            Profesional de Git</h4>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-6">Gestión de ramas y flujos colaborativos
+                            para proyectos como NexStore.</p>
+                        <div class="flex flex-col gap-2">
+                            <div class="flex items-center gap-2 text-xs font-bold text-[#BFA2DB]">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M20 6 9 17l-5-5" />
+                                </svg>
+                                LOGRO OBTENIDO (DIC 2025)
+                            </div>
+                            <span class="text-[10px] text-gray-600 font-mono">ID: fa21a839</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
 
     <footer id="contacto"
         class="min-h-screen w-full flex flex-col justify-center items-center bg-[#2B2B2B] text-white px-6 py-24 text-center relative overflow-hidden">
@@ -506,7 +551,7 @@
                         </svg>
                     </a>
 
-                    <a href="https://instagram.com/tu_usuario" target="_blank"
+                    <a href="https://www.instagram.com/koalinkdev/" target="_blank"
                         class="p-4 bg-white/5 rounded-xl hover:bg-[#BFA2DB]/20 transition border border-white/10 group">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -517,7 +562,7 @@
                         </svg>
                     </a>
 
-                    <a href="https://tiktok.com/@tu_usuario" target="_blank"
+                    <a href="https://www.tiktok.com/@koalinkdev" target="_blank"
                         class="p-4 bg-white/5 rounded-xl hover:bg-[#BFA2DB]/20 transition border border-white/10 group">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -538,14 +583,14 @@
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-    // 1. Aseguramos que el DOM esté listo para evitar errores de 'null'
-    document.addEventListener('DOMContentLoaded', () => {
-        
+        // 1. Aseguramos que el DOM esté listo para evitar errores de 'null'
+
+
         // Inicialización de Animaciones AOS
-        AOS.init({ 
-            duration: 800, 
-            once: true, 
-            offset: 100 
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
         });
 
         const btn = document.getElementById('btnMenu');
@@ -570,11 +615,11 @@
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 const targetId = this.getAttribute('href');
-                
+
                 // Solo actuamos si el enlace es a una sección interna
                 if (targetId.startsWith('#') && targetId.length > 1) {
                     e.preventDefault(); // Evita que aparezca el '#' en la URL
-                    
+
                     const targetElement = document.querySelector(targetId);
                     if (targetElement) {
                         const offset = 80; // Altura de tu Navbar
@@ -599,8 +644,88 @@
                 }
             });
         }
-    });
-</script>
+
+        /**
+     * BALANCEO DE PUNTOS:
+     */
+        const certificationData = [
+            { name: "Máster Ethical Hacking", category: "Seguridad", weight: 15 },
+            { name: "Python Fundamental 1 & 2", category: "Backend", weight: 12 },
+            { name: "Gestión TI Institucional", category: "Liderazgo", weight: 20 }, 
+            { name: "Cisco Networking Pro", category: "Infraestructura", weight: 15 },
+            { name: "Git & Flujo Profesional", category: "Herramientas", weight: 10 },
+            { name: "Desarrollo KoaLink", category: "Backend", weight: 8 }
+        ];
+
+        function playSystemSound() {
+            try {
+                const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+                const osc = audioCtx.createOscillator();
+                const gain = audioCtx.createGain();
+                osc.type = 'square';
+                osc.frequency.setValueAtTime(880, audioCtx.currentTime);
+                osc.frequency.exponentialRampToValueAtTime(440, audioCtx.currentTime + 0.15);
+                gain.gain.setValueAtTime(0.03, audioCtx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.4);
+                osc.connect(gain);
+                gain.connect(audioCtx.destination);
+                osc.start();
+                osc.stop(audioCtx.currentTime + 0.4);
+            } catch (e) { console.log("Audio interactivo en espera."); }
+        }
+
+        function initializeSystem() {
+            const container = document.getElementById('skills-container');
+            const achievementsList = document.getElementById('recent-achievements');
+            const statusWindow = document.getElementById('status-window');
+            const categories = ["Backend", "Seguridad", "Infraestructura", "Liderazgo", "Herramientas"];
+
+            categories.forEach(cat => {
+                const totalPoints = certificationData
+                    .filter(c => c.category === cat)
+                    .reduce((acc, curr) => acc + curr.weight, 0);
+                const points = Math.min(totalPoints, 100);
+
+                container.innerHTML += `
+                <div>
+                    <div class="flex justify-between text-[11px] md:text-sm uppercase mb-2 font-black tracking-widest">
+                        <span class="${cat === 'Liderazgo' ? 'text-yellow-500' : 'text-gray-300'}">
+                            ${cat === 'Liderazgo' ? '★ ' + cat : cat}
+                        </span>
+                        <span class="text-[#BFA2DB]">${points}%</span>
+                    </div>
+                    <div class="h-2 w-full bg-gray-900 rounded-full border border-white/5 p-[1px]">
+                        <div class="h-full bg-[#BFA2DB] shadow-[0_0_20px_#BFA2DB] transition-all duration-[3000ms] ease-in-out" 
+                             style="width: 0%" 
+                             data-target-width="${points}%">
+                        </div>
+                    </div>
+                </div>
+            `;
+            });
+
+            certificationData.slice(0, 4).forEach(cert => {
+                achievementsList.innerHTML += `
+                <li class="flex items-center gap-3">
+                    <span class="text-[#BFA2DB] animate-pulse">»</span>
+                    <span>${cert.name}</span>
+                </li>
+            `;
+            });
+
+            setTimeout(() => {
+                statusWindow.classList.remove('opacity-0');
+                playSystemSound();
+                document.getElementById('player-lvl').innerText = 10 + certificationData.length;
+                setTimeout(() => {
+                    document.querySelectorAll('[data-target-width]').forEach(bar => {
+                        bar.style.width = bar.getAttribute('data-target-width');
+                    });
+                }, 500);
+            }, 800);
+        }
+        document.addEventListener('DOMContentLoaded', initializeSystem);
+    </script>
 </body>
 
 </html>
