@@ -2,40 +2,55 @@
 <html lang="es" class="scroll-smooth">
 
 <head>
+    <!-- Meta tags: Configuración básica del documento -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Luciano Aliaga | Portafolio Profesional</title>
+    
+    <!-- CDN Tailwind CSS: Framework CSS para diseño responsive -->
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- AOS (Animate On Scroll): Librería para animar elementos al hacer scroll -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    
+    <!-- Google Fonts: Fuente Inter para tipografía moderna -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
     <style>
+        /* Estilos CSS personalizados e inyectados */
+        
+        /* Configurar fuente global del documento */
         body {
             font-family: "Inter", sans-serif;
         }
 
+        /* Clase para imágenes rotadas (efecto levemente inclinado) */
         .ImagenRotada {
             transform: rotate(3deg);
         }
 
+        /* Clase para imágenes de contenido (rotación inversa + zoom) */
         .ImagenContenido {
             transform: rotate(-3deg) scale(1.1);
         }
 
-        /* Eliminamos las reglas de scroll-snap para permitir scroll libre */
+        /* Secciones con posicionamiento relativo para el sistema de capas */
         section,
         footer {
             position: relative;
         }
 
-        /* Estilo para el efecto glitch sutil */
+        /* Efecto glitch sutil al pasar mouse sobre el nombre del jugador */
+        /* Crea sombra de texto con desplazamiento para efecto retro */
         #player-name:hover {
             text-shadow: 2px 0 #BFA2DB, -2px 0 #ff00ff;
         }
     </style>
 </head>
 
+<!-- CUERPO DEL DOCUMENTO: Fondo degradado radial, colores principales y overflow-x hidden -->
 <body
     class="bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-gray-50 via-white to-[#BFA2DB]/20 text-[#2B2B2B] overflow-x-hidden">
+    <!-- NAVEGACIÓN: Navbar fijo en el top con efecto blur y transiciones suaves -->
     <nav class="fixed top-0 w-full z-50 bg-white/70 backdrop-blur-lg border-b border-gray-100/50 transition-all duration-300"
         id="navbar">
         <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
@@ -71,6 +86,7 @@
         </div>
     </nav>
 
+    <!-- SECCIÓN INICIO/HERO: Presenta al usuario con foto y descripción principal -->
     <section id="inicio" class="min-h-screen flex items-center justify-center px-6 py-20 relative overflow-hidden">
         <div class="absolute inset-0 -z-10 pointer-events-none">
             <div class="absolute top-1/4 left-1/4 w-72 h-72 bg-[#BFA2DB]/10 rounded-full blur-[80px]"></div>
@@ -115,6 +131,7 @@
         </div>
     </section>
 
+    <!-- SECCIÓN STATS: Panel de atributos (habilidades) con sistema de puntos y logros -->
     <section id="stats" class="min-h-screen flex flex-col justify-center py-24 px-6 bg-[#f8f9fa]">
         <div class="max-w-5xl mx-auto w-full">
 
@@ -126,7 +143,9 @@
                 <div class="w-16 h-1 bg-[#BFA2DB] mx-auto mt-4 rounded-full"></div>
             </div>
 
-            <div id="status-window"
+<!-- STATUS WINDOW: Ventana tipo consola/terminal que se anima al cargar -->
+                <!-- opacity-0 es removido por JavaScript después de delays -->
+                <div id="status-window"
                 class="bg-[#1a1a1a] border-2 border-[#BFA2DB] p-8 md:p-12 rounded-2xl shadow-[0_0_50px_rgba(191,162,219,0.2)] text-white font-mono relative overflow-hidden opacity-0 transition-opacity duration-1000">
 
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-20">
@@ -181,6 +200,7 @@
         </div>
     </section>
 
+    <!-- SECCIÓN EXPERIENCIA: Trayectoria educacional y profesional con tarjetas -->
     <section id="experiencia" class="min-h-screen w-full flex flex-col justify-center px-6 py-24">
         <div class="max-w-6xl mx-auto w-full">
             <div data-aos="fade-up" class="text-center mb-16">
@@ -271,6 +291,7 @@
         </div>
     </section>
 
+    <!-- SECCIÓN CERTIFICACIONES: Registro de misiones/certificaciones completadas por categoría -->
     <section id="certificaciones" class="min-h-screen flex flex-col justify-center py-24 px-6 bg-[#f8f9fa]">
         <div class="max-w-6xl mx-auto w-full">
 
@@ -474,6 +495,7 @@
         </div>
     </section>
 
+    <!-- FOOTER/CONTACTO: Sección final con call-to-action y enlaces a redes sociales -->
     <footer id="contacto"
         class="min-h-screen w-full flex flex-col justify-center items-center bg-[#2B2B2B] text-white px-6 py-24 text-center relative overflow-hidden">
 
@@ -583,27 +605,46 @@
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // 1. Aseguramos que el DOM esté listo para evitar errores de 'null'
+        /**
+         * ==================================================================
+         * SCRIPT PRINCIPAL - PORTAFOLIO DE LUCIANO ALIAGA
+         * ==================================================================
+         * Este script gestiona:
+         * - Animaciones de scroll (AOS)
+         * - Navegación interactiva con scroll suave
+         * - Efectos dinámicos del navbar
+         * - Sistema de visualización de habilidades y certificaciones
+         * - Sonidos del sistema
+         * ==================================================================
+         */
 
-
-        // Inicialización de Animaciones AOS
+        /**
+         * SECCIÓN 1: INICIALIZACIÓN DE ANIMACIONES (AOS - Animate On Scroll)
+         * AOS permite animar elementos cuando entran en el viewport
+         */
         AOS.init({
-            duration: 800,
-            once: true,
-            offset: 100
+            duration: 800,      // Duración de la animación en ms
+            once: true,         // La animación solo ocurre una vez
+            offset: 100         // Activar animación 100px antes de que el elemento sea visible
         });
 
+        // Seleccionar elementos del DOM necesarios para el menú móvil y navbar
         const btn = document.getElementById('btnMenu');
         const menu = document.getElementById('menuMovil');
         const navbar = document.getElementById('navbar');
 
-        // 2. Lógica del Menú Móvil (Solo si los IDs existen)
+        /**
+         * SECCIÓN 2: LÓGICA DEL MENÚ MÓVIL
+         * Permite abrir/cerrar el menú en dispositivos móviles y cerrar al hacer click
+         * Solo se ejecuta si los elementos del menú existen en el DOM
+         */
         if (btn && menu) {
+            // Toggle: mostrar/ocultar menú al hacer click en el botón
             btn.addEventListener('click', () => {
                 menu.classList.toggle('hidden');
             });
 
-            // Cerrar menú al hacer click en un link
+            // Cerrar menú automáticamente cuando el usuario hace click en un link de navegación
             menu.querySelectorAll('a').forEach(link => {
                 link.addEventListener('click', () => {
                     menu.classList.add('hidden');
@@ -611,20 +652,27 @@
             });
         }
 
-        // 3. NAVEGACIÓN LIMPIA: Quitar el '#' de la URL y Scroll Suave
+        /**
+         * SECCIÓN 3: NAVEGACIÓN LIMPIA CON SCROLL SUAVE
+         * - Previene que aparezca '#' en la URL al hacer click en enlaces internos
+         * - Implementa scroll suave hacia las secciones
+         * - Compensa la altura del navbar fijo (80px)
+         */
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 const targetId = this.getAttribute('href');
 
-                // Solo actuamos si el enlace es a una sección interna
+                // Solo procesa si el href es un ID válido (comienza con '#')
                 if (targetId.startsWith('#') && targetId.length > 1) {
-                    e.preventDefault(); // Evita que aparezca el '#' en la URL
+                    e.preventDefault(); // Evita la navegación por defecto del navegador
 
                     const targetElement = document.querySelector(targetId);
                     if (targetElement) {
-                        const offset = 80; // Altura de tu Navbar
+                        // Offset para que el contenido no quede oculto bajo el navbar fijo
+                        const offset = 80;
                         const targetPosition = targetElement.offsetTop - offset;
 
+                        // Scroll suave hacia el objetivo
                         window.scrollTo({
                             top: targetPosition,
                             behavior: 'smooth'
@@ -634,20 +682,32 @@
             });
         });
 
-        // 4. Efecto de Navbar al hacer Scroll
+        /**
+         * SECCIÓN 4: EFECTO VISUAL DEL NAVBAR AL HACER SCROLL
+         * Añade sombra y fondo opaco cuando el usuario hace scroll
+         * Mejora la legibilidad del contenido que pasa bajo el navbar
+         */
         if (navbar) {
             window.addEventListener('scroll', () => {
+                // Si el usuario ha hecho scroll más de 50px
                 if (window.scrollY > 50) {
+                    // Activar estilo de navbar "sólido"
                     navbar.classList.add('bg-white/90', 'shadow-md');
                 } else {
+                    // Volver al estilo transparente
                     navbar.classList.remove('bg-white/90', 'shadow-md');
                 }
             });
         }
 
         /**
-     * BALANCEO DE PUNTOS:
-     */
+         * SECCIÓN 5: DATOS DE CERTIFICACIONES Y HABILIDADES
+         * Array que contiene la información de cada certificación/logro
+         * Campos:
+         *   - name: Nombre de la certificación
+         *   - category: Categoría a la que pertenece (Backend, Seguridad, etc.)
+         *   - weight: Peso/puntos que aporta a su categoría (max 100)
+         */
         const certificationData = [
             { name: "Máster Ethical Hacking", category: "Seguridad", weight: 15 },
             { name: "Python Fundamental 1 & 2", category: "Backend", weight: 12 },
@@ -657,44 +717,97 @@
             { name: "Desarrollo KoaLink", category: "Backend", weight: 8 }
         ];
 
+        /**
+         * SECCIÓN 6: GENERADOR DE SONIDO DEL SISTEMA
+         * Crea un pitido de 8-bit usando Web Audio API
+         * Emite un barrido de frecuencia: 880Hz → 440Hz durante 0.4 segundos
+         * Tiene manejo de errores para navegadores que no soporten Web Audio
+         */
         function playSystemSound() {
             try {
+                // Crear contexto de audio (compatible con navegadores antiguos)
                 const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+                
+                // Crear oscilador (generador de onda)
                 const osc = audioCtx.createOscillator();
+                
+                // Crear control de volumen (ganancia)
                 const gain = audioCtx.createGain();
+                
+                // Configurar tipo de onda: square (sonido "retro" tipo Atari)
                 osc.type = 'square';
+                
+                // Frecuencia inicial: 880 Hz (nota alta)
                 osc.frequency.setValueAtTime(880, audioCtx.currentTime);
+                
+                // Barrido de frecuencia exponencial a 440 Hz en 150ms (nota más baja)
                 osc.frequency.exponentialRampToValueAtTime(440, audioCtx.currentTime + 0.15);
+                
+                // Volumen inicial: 3% (muy bajo para no abrumar)
                 gain.gain.setValueAtTime(0.03, audioCtx.currentTime);
+                
+                // Reducir volumen exponencialmente a 1% en 400ms (fade out)
                 gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.4);
+                
+                // Conectar: oscilador → ganancia → salida de audio
                 osc.connect(gain);
                 gain.connect(audioCtx.destination);
+                
+                // Iniciar y detener el sonido
                 osc.start();
                 osc.stop(audioCtx.currentTime + 0.4);
-            } catch (e) { console.log("Audio interactivo en espera."); }
+                
+            } catch (e) { 
+                // Si Web Audio no está disponible, registrar en consola
+                console.log("Audio interactivo en espera.");
+            }
         }
 
+        /**
+         * SECCIÓN 7: INICIALIZACIÓN DEL SISTEMA COMPLETO
+         * Función principal que:
+         * 1. Genera las barras de habilidades dinámicamente
+         * 2. Crea la lista de logros recientes
+         * 3. Anima la ventana de estado
+         * 4. Calcula el nivel del jugador
+         * 5. Anima los porcentajes de habilidades
+         */
         function initializeSystem() {
+            // Obtener referencias a elementos del DOM donde se mostrarán datos
             const container = document.getElementById('skills-container');
             const achievementsList = document.getElementById('recent-achievements');
             const statusWindow = document.getElementById('status-window');
+            
+            // Definir las categorías de habilidades que se mostrarán
             const categories = ["Backend", "Seguridad", "Infraestructura", "Liderazgo", "Herramientas"];
 
+            /**
+             * BUCLE 1: Generar barras de habilidades por categoría
+             * Para cada categoría, calcula los puntos totales y dibuja una barra de progreso
+             */
             categories.forEach(cat => {
+                // Filtrar certificaciones de esta categoría y sumar sus pesos
                 const totalPoints = certificationData
                     .filter(c => c.category === cat)
                     .reduce((acc, curr) => acc + curr.weight, 0);
+                
+                // Limitar a 100% máximo
                 const points = Math.min(totalPoints, 100);
 
+                // Inyectar HTML: barra de habilidad con etiqueta y porcentaje
                 container.innerHTML += `
                 <div>
                     <div class="flex justify-between text-[11px] md:text-sm uppercase mb-2 font-black tracking-widest">
+                        <!-- Mostrar símbolo especial ★ para "Liderazgo" (categoría destacada) -->
                         <span class="${cat === 'Liderazgo' ? 'text-yellow-500' : 'text-gray-300'}">
                             ${cat === 'Liderazgo' ? '★ ' + cat : cat}
                         </span>
+                        <!-- Mostrar el porcentaje en color púrpura -->
                         <span class="text-[#BFA2DB]">${points}%</span>
                     </div>
+                    <!-- Contenedor de la barra de progreso -->
                     <div class="h-2 w-full bg-gray-900 rounded-full border border-white/5 p-[1px]">
+                        <!-- Barra que se anima: comienza en 0% y llega a su valor objetivo -->
                         <div class="h-full bg-[#BFA2DB] shadow-[0_0_20px_#BFA2DB] transition-all duration-[3000ms] ease-in-out" 
                              style="width: 0%" 
                              data-target-width="${points}%">
@@ -704,26 +817,52 @@
             `;
             });
 
+            /**
+             * BUCLE 2: Generar lista de logros recientes
+             * Toma los primeros 4 logros y los muestra en formato de lista animada
+             */
             certificationData.slice(0, 4).forEach(cert => {
                 achievementsList.innerHTML += `
                 <li class="flex items-center gap-3">
+                    <!-- Símbolo animado » con efecto pulse -->
                     <span class="text-[#BFA2DB] animate-pulse">»</span>
                     <span>${cert.name}</span>
                 </li>
             `;
             });
 
+            /**
+             * FINAL: Animar la ventana de estado
+             * Espera 800ms, luego:
+             * - Revela la ventana (quita opacity-0)
+             * - Reproduce el sonido del sistema
+             * - Muestra el nivel (10 + cantidad de certificaciones)
+             * - Anima las barras de habilidades (después de otro delay)
+             */
             setTimeout(() => {
+                // Remover clase opacity-0 para revelar la ventana con transición suave
                 statusWindow.classList.remove('opacity-0');
+                
+                // Reproducir sonido característico del sistema
                 playSystemSound();
+                
+                // Establecer el nivel del jugador: 10 + número de certificaciones
                 document.getElementById('player-lvl').innerText = 10 + certificationData.length;
+                
+                // Pequeño delay antes de animar las barras (para efecto secuencial)
                 setTimeout(() => {
+                    // Animar todas las barras: cambiar width de 0% a su valor objetivo
                     document.querySelectorAll('[data-target-width]').forEach(bar => {
                         bar.style.width = bar.getAttribute('data-target-width');
                     });
                 }, 500);
             }, 800);
         }
+
+        /**
+         * ACTIVADOR: Esperar a que el DOM esté completamente cargado
+         * Una vez listo, ejecutar la inicialización del sistema
+         */
         document.addEventListener('DOMContentLoaded', initializeSystem);
     </script>
 </body>

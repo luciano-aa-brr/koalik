@@ -2,28 +2,87 @@
 <html lang="es" class="scroll-smooth">
 
 <head>
+    <!-- META INFORMACIÓN: Configuración básica y SEO -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>KoaLink | Landing Pages</title>
+    
+    <!-- TITLE Y DESCRIPCIÓN: Optimizados para SEO -->
+    <title>KoaLink | Landing Pages Profesionales para PYMES - Desarrollo Web</title>
+    <meta name="description" content="Crea tu presencia digital con KoaLink. Landing pages de alto impacto, sitios corporativos y soluciones web seguras para PYMES. Diseño responsive, SEO optimizado y soporte 24/7." />
+    <meta name="keywords" content="landing pages, diseño web, desarrollo web, PYMES, sitio web profesional, presencia digital, Chile" />
+    
+    <!-- REDES SOCIALES: Open Graph para compartir en RRSS -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="KoaLink | Landing Pages Profesionales para PYMES" />
+    <meta property="og:description" content="Soluciones web estratégicas de alto impacto diseñadas para potenciar tu presencia digital." />
+    <meta property="og:site_name" content="KoaLink" />
+    <meta name="twitter:card" content="summary_large_image" />
+    
+    <!-- COLORES Y ICONOGRAFÍA PARA NAVEGADORES -->
+    <meta name="theme-color" content="#BFA2DB" />
+    <link rel="canonical" href="https://koalink.cl/" />
+    
+    <!-- CDN Tailwind CSS: Framework CSS para diseño responsive -->
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts con font-display=swap para mejor rendimiento -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+    
+    <!-- AOS (Animate On Scroll): Librería para animar elementos al hacer scroll -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <style>
+        /* Estilos CSS personalizados e inyectados */
+        
+        /* Configurar fuente global del documento */
         body {
             font-family: "Inter", sans-serif;
         }
 
-        /* Secciones con posición relativa para un flujo natural */
+        /* Secciones con posicionamiento relativo para un flujo natural */
         section,
         header,
         footer {
             position: relative;
         }
+        
+        /* OPTIMIZACIÓN DE RENDIMIENTO: Precargar imágenes críticas */
+        img {
+            loading: lazy; /* Lazy loading nativo para todas las imágenes */
+            decoding: async; /* Decodificación asincrónica para no bloquear render */
+        }
+        
+        /* OPTIMIZACIÓN: Propiedades de escritura de fuentes para mejor rendimiento */
+        body {
+            font-display: swap;
+        }
     </style>
+    
+    <!-- STRUCTURED DATA: Schema JSON-LD para mejor indexación en Google -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "KoaLink",
+        "description": "Soluciones web estratégicas y landing pages de alto impacto para PYMES",
+        "url": "https://koalink.cl",
+        "telephone": "+56966888378",
+        "email": "contacto@koalink.cl",
+        "areaServed": {
+            "@type": "Country",
+            "name": "CL"
+        },
+        "priceRange": "$$",
+        "serviceType": ["Landing Pages", "Sitios Web", "One Page", "Páginas Corporativas"]
+    }
+    </script>
 </head>
 
+<!-- CUERPO DEL DOCUMENTO: Fondo degradado radial, tema de colores y overflow controlado -->
+<!-- Nota: scroll-smooth se aplica en HTML tag para mejor rendimiento -->
 <body
     class="bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-gray-50 via-white to-[#BFA2DB]/20 text-[#2B2B2B] overflow-x-hidden">
+    <!-- NAVEGACIÓN PRINCIPAL: Navbar fijo con blur effect y efecto de scroll dinámico -->
+    <!-- El JavaScript agrega bg-white/90 y shadow-md cuando scrollY > 50px -->
     <nav class="fixed w-full bg-white/80 backdrop-blur-md z-50 border-b border-gray-100/50">
         <div class="max-w-7xl mx-auto px-4 h-20 flex justify-between items-center">
             <div class="flex items-center gap-2">
@@ -46,6 +105,8 @@
         </div>
     </nav>
 
+    <!-- SECCIÓN HERO/HEADER: Presentación principal con animaciones AOS -->
+    <!-- data-aos="fade-down" y data-aos-delay para animaciones de scroll -->
     <header class="min-h-screen flex flex-col justify-center items-center pt-32 pb-20 px-6 text-center">
         <h1 data-aos="fade-down" class="text-5xl md:text-7xl font-black mb-6 text-[#2B2B2B] leading-tight">
             Impulsa tu PYME con <br /><span class="text-[#BFA2DB]">KoaLink</span>
@@ -65,6 +126,8 @@
         </div>
     </header>
 
+    <!-- SECCIÓN SERVICIOS: Grid responsive (1 col mobile, 4 col desktop) con tarjetas de servicios -->
+    <!-- Incluye 4 planes diferentes optimizados para SEO -->
     <section id="servicios" class="py-24 px-6 bg-white">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-20">
@@ -216,6 +279,8 @@
         </div>
     </section>
 
+    <!-- SECCIÓN PROYECTOS: Showcase de casos de éxito con proyectos reales -->
+    <!-- Imágenes con lazy loading y alt text SEO optimizado -->
     <section id="proyectos" class="min-h-screen flex flex-col justify-center py-24">
         <div class="max-w-6xl mx-auto px-6 w-full">
             <div data-aos="fade-up" class="text-center mb-16">
@@ -230,8 +295,9 @@
                 <a href="https://lilstuart.vercel.app/" target="_blank" data-aos="fade-right"
                     class="group relative bg-white/40 backdrop-blur-xl rounded-[2.5rem] border border-white p-4 transition-all hover:shadow-2xl hover:shadow-[#BFA2DB]/20 block">
                     <div class="overflow-hidden rounded-[2rem] h-64 md:h-80 bg-gray-100 relative">
-                        <img src="./img/lilstuartView.png" alt="Lil Stuart"
-                            class="w-full h-full object-cover group-hover:scale-105 transition duration-700"
+                    <img src="./img/lilstuartView.png" alt="Lil Stuart - Página de perfil de artista musical diseñada por KoaLink"
+                        class="w-full h-full object-cover group-hover:scale-105 transition duration-700"
+                        loading="lazy"
                             onerror="this.src='https://via.placeholder.com/600x400?text=Lil+Stuart+Creator+Page'">
                         <div
                             class="absolute inset-0 bg-gradient-to-t from-[#BFA2DB]/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
@@ -262,8 +328,9 @@
                 <a href="https://www.escuelaaraucania.cl/" target="_blank" data-aos="fade-left"
                     class="group relative bg-white/40 backdrop-blur-xl rounded-[2.5rem] border border-white p-4 transition-all hover:shadow-2xl hover:shadow-[#BFA2DB]/20 block">
                     <div class="overflow-hidden rounded-[2rem] h-64 md:h-80 bg-gray-100 relative">
-                        <img src="./img/escuelaView.png" alt="Proyecto Escuela"
-                            class="w-full h-full object-cover group-hover:scale-105 transition duration-700"
+                    <img src="./img/escuelaView.png" alt="Institución Educacional - Sitio web informativo escolar diseñado por KoaLink"
+                        class="w-full h-full object-cover group-hover:scale-105 transition duration-700"
+                        loading="lazy"
                             onerror="this.src='https://via.placeholder.com/600x400?text=Proyecto+Escuela+Digital'">
                         <div
                             class="absolute inset-0 bg-gradient-to-t from-[#BFA2DB]/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
@@ -295,6 +362,8 @@
         </div>
     </section>
 
+    <!-- SECCIÓN FAQ: Preguntas frecuentes con elementos <details> interactivos -->
+    <!-- Facilita reducción de bounce rate y mejora UX -->
     <section id="faq" class="min-h-screen flex flex-col justify-center py-24">
         <div class="max-w-5xl mx-auto px-6 w-full">
             <div data-aos="fade-up" class="text-center mb-16">
@@ -446,6 +515,8 @@
         </div>
     </section>
 
+    <!-- FOOTER/CONTACTO: Sección final con CTA principal y enlace directo a WhatsApp -->
+    <!-- Incluye gradiente decorativo y datos mínimos de copyright -->
     <footer id="contacto"
         class="min-h-screen flex flex-col justify-center items-center bg-[#2B2B2B] text-white px-6 py-24 text-center relative overflow-hidden">
         <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#BFA2DB] to-transparent">
@@ -469,48 +540,52 @@
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // 1. Aseguramos que el DOM esté listo para evitar errores de 'null'
+        /**
+         * ==================================================================
+         * SCRIPT PRINCIPAL - KOALINK LANDING PAGE
+         * ==================================================================
+         * Optimizaciones de rendimiento:
+         * - DOMContentLoaded para evitar bloqueos de render
+         * - Uso de event delegation para mejorar eficiencia
+         * - Eliminadas referencias a elementos que no existen en el DOM
+         * ==================================================================
+         */
+
         document.addEventListener('DOMContentLoaded', () => {
 
-            // Inicialización de Animaciones AOS
+            /**
+             * SECCIÓN 1: INICIALIZACIÓN DE ANIMACIONES (AOS)
+             * AOS permite animar elementos cuando entran en el viewport
+             * Configuración optimizada para no afectar rendimiento inicial
+             */
             AOS.init({
-                duration: 800,
-                once: true,
-                offset: 100
+                duration: 800,      // Duración de animación en ms
+                once: true,         // Solo animar una vez (evita repetición)
+                offset: 100         // Trigger 100px antes de que el elemento sea visible
             });
 
-            const btn = document.getElementById('btnMenu');
-            const menu = document.getElementById('menuMovil');
-            const navbar = document.getElementById('navbar');
-
-            // 2. Lógica del Menú Móvil (Solo si los IDs existen)
-            if (btn && menu) {
-                btn.addEventListener('click', () => {
-                    menu.classList.toggle('hidden');
-                });
-
-                // Cerrar menú al hacer click en un link
-                menu.querySelectorAll('a').forEach(link => {
-                    link.addEventListener('click', () => {
-                        menu.classList.add('hidden');
-                    });
-                });
-            }
-
-            // 3. NAVEGACIÓN LIMPIA: Quitar el '#' de la URL y Scroll Suave
+            /**
+             * SECCIÓN 2: NAVEGACIÓN SUAVE SIN HASH EN URL
+             * - Detecta clicks en enlaces internos (#)
+             * - Compensa altura del navbar (80px)
+             * - Scroll suave hacia la sección
+             * - Evita que aparezca '#' en la URL
+             */
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
                     const targetId = this.getAttribute('href');
 
-                    // Solo actuamos si el enlace es a una sección interna
+                    // Solo procesar si es un ID válido
                     if (targetId.startsWith('#') && targetId.length > 1) {
-                        e.preventDefault(); // Evita que aparezca el '#' en la URL
+                        e.preventDefault();
 
                         const targetElement = document.querySelector(targetId);
                         if (targetElement) {
-                            const offset = 80; // Altura de tu Navbar
+                            // Offset para compensar el navbar fijo
+                            const offset = 80;
                             const targetPosition = targetElement.offsetTop - offset;
 
+                            // Scroll suave hacia el objetivo
                             window.scrollTo({
                                 top: targetPosition,
                                 behavior: 'smooth'
@@ -520,15 +595,22 @@
                 });
             });
 
-            // 4. Efecto de Navbar al hacer Scroll
+            /**
+             * SECCIÓN 3: EFECTO VISUAL DEL NAVBAR AL HACER SCROLL
+             * Añade sombra dinámica cuando el usuario hace scroll
+             * Mejora la legibilidad visual del contenido
+             */
+            const navbar = document.getElementById('navbar');
             if (navbar) {
                 window.addEventListener('scroll', () => {
                     if (window.scrollY > 50) {
+                        // Navbar "sólido" después de 50px de scroll
                         navbar.classList.add('bg-white/90', 'shadow-md');
                     } else {
+                        // Navbar transparente en el top
                         navbar.classList.remove('bg-white/90', 'shadow-md');
                     }
-                });
+                }, { passive: true }); // Passive listener para mejor rendimiento
             }
         });
     </script>

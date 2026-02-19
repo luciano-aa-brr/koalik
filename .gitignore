@@ -1,0 +1,38 @@
+# Archivos de Documentación y Pruebas (No subir a GitHub)
+MEJORAS_IMPLEMENTADAS.md
+CHECKLIST_OPTIMIZACION.md
+ESTRATEGIA_SEO_RENDIMIENTO.md
+
+# Archivos de Sistema
+.DS_Store
+Thumbs.db
+*.log
+
+# Editores
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Node (si usas npm)
+node_modules/
+package-lock.json
+yarn.lock
+
+# Dependencias
+/dist
+/build
+
+# Variables de Entorno
+.env
+.env.local
+.env.*.local
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
