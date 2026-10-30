@@ -1,870 +1,178 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es" class="scroll-smooth">
-
 <head>
-    <!-- Meta tags: Configuración básica del documento -->
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Luciano Aliaga | Portafolio Profesional</title>
-    
-    <!-- CDN Tailwind CSS: Framework CSS para diseño responsive -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luciano Aliaga | Analista Programador & Ciberseguridad</title>
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- AOS (Animate On Scroll): Librería para animar elementos al hacer scroll -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    
-    <!-- Google Fonts: Fuente Inter para tipografía moderna -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+    <!-- Tipografía Inter Unificada -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        /* Estilos CSS personalizados e inyectados */
-        
-        /* Configurar fuente global del documento */
+        html {
+            scroll-behavior: smooth;
+        }
         body {
-            font-family: "Inter", sans-serif;
-        }
-
-        /* Clase para imágenes rotadas (efecto levemente inclinado) */
-        .ImagenRotada {
-            transform: rotate(3deg);
-        }
-
-        /* Clase para imágenes de contenido (rotación inversa + zoom) */
-        .ImagenContenido {
-            transform: rotate(-3deg) scale(1.1);
-        }
-
-        /* Secciones con posicionamiento relativo para el sistema de capas */
-        section,
-        footer {
-            position: relative;
-        }
-
-        /* Efecto glitch sutil al pasar mouse sobre el nombre del jugador */
-        /* Crea sombra de texto con desplazamiento para efecto retro */
-        #player-name:hover {
-            text-shadow: 2px 0 #BFA2DB, -2px 0 #ff00ff;
+            font-family: 'Inter', sans-serif;
         }
     </style>
 </head>
+<body class="bg-white text-[#2B2B2B] antialiased">
 
-<!-- CUERPO DEL DOCUMENTO: Fondo degradado radial, colores principales y overflow-x hidden -->
-<body
-    class="bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-gray-50 via-white to-[#BFA2DB]/20 text-[#2B2B2B] overflow-x-hidden">
-    <!-- NAVEGACIÓN: Navbar fijo en el top con efecto blur y transiciones suaves -->
-    <nav class="fixed top-0 w-full z-50 bg-white/70 backdrop-blur-lg border-b border-gray-100/50 transition-all duration-300"
-        id="navbar">
+    <!-- NAVBAR UNIFICADO -->
+    <nav class="bg-white/90 backdrop-blur-md border-b border-[#D9D9D9]/50 sticky top-0 z-50 transition-all">
         <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+            
+            <!-- Logo KoaLink -->
+            <a href="../index.html" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 bg-[#BFA2DB] rounded-xl flex items-center justify-center text-white font-bold text-lg shadow-sm group-hover:scale-105 transition transform">
+                    K
+                </div>
+                <span class="text-2xl font-bold tracking-tight text-[#2B2B2B] group-hover:text-[#BFA2DB] transition">KoaLink</span>
+            </a>
 
-            <div class="flex items-center gap-6">
-                <a href="../index.html"
-                    class="text-[#BFA2DB] hover:text-[#2B2B2B] transition font-black text-xs uppercase tracking-tighter flex items-center gap-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="m15 18-6-6 6-6" />
-                    </svg>
-                    KoaLink
-                </a>
-                <div class="hidden sm:block h-6 w-[1px] bg-gray-200"></div>
-                <a href="#inicio" class="flex items-center gap-3 group">
-                    <div
-                        class="w-10 h-10 bg-[#BFA2DB] rounded-xl flex items-center justify-center text-white font-black shadow-lg shadow-[#BFA2DB]/30 group-hover:rotate-12 transition-transform">
-                        LA
-                    </div>
-                </a>
+            <!-- Enlaces Desktop -->
+            <div class="hidden md:flex items-center gap-8 font-medium text-sm text-[#4A444A]">
+                <a href="https://wa.me/56966888378" target="_blank"
+                    class="bg-[#BFA2DB] text-white px-6 py-2 rounded-full hover:shadow-xl transition-all text-sm font-bold">Descargar CV</a>
             </div>
 
-            <div class="hidden lg:flex items-center gap-8 font-bold text-xs uppercase tracking-widest text-gray-500">
-                <a href="#stats" class="hover:text-[#BFA2DB] transition">Stats</a>
-                <a href="#experiencia" class="hover:text-[#BFA2DB] transition">Trayectoria</a>
-                <a href="#certificaciones" class="hover:text-[#BFA2DB] transition">Misiones</a>
-            </div>
+            <!-- Botón Móvil -->
+            <button id="BotonMenu" aria-label="Abrir Menú" class="md:hidden text-[#2B2B2B] p-2 focus:outline-none">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
 
-            <a href="https://wa.me/56966888378" target="_blank"
-                class="hidden md:block bg-[#BFA2DB] text-white font-black px-6 py-2.5 rounded-xl hover:shadow-lg shadow-[#BFA2DB]/20 transition text-[10px] uppercase tracking-widest">
-                Contactar
+        <!-- Menú Móvil -->
+        <div id="MenuMovil" class="hidden flex-col bg-white border-b border-[#D9D9D9]/60 px-6 py-5 gap-4 md:hidden shadow-lg">
+            <a href="../index.html" class="text-sm font-medium text-[#4A444A] hover:text-[#BFA2DB]">Inicio KoaLink</a>
+            <a href="https://github.com/luciano-aa-brr" target="_blank" class="text-sm font-medium text-[#4A444A] hover:text-[#BFA2DB]">GitHub</a>
+            <a href="https://www.linkedin.com/in/luciano-aliaga/" target="_blank" class="text-sm font-medium text-[#4A444A] hover:text-[#BFA2DB]">LinkedIn</a>
+            <a href="https://www.instagram.com/koalinkdev?utm_source=ig_web_button_share_sheet&mdxt=ZDNlZDc0MzIxNw==" target="_blank" class="text-sm font-medium text-[#4A444A] hover:text-[#BFA2DB]">Instagram</a>
+            <a href="./doc/cv_LucianoAliaga.pdf" download class="bg-[#BFA2DB] text-white text-center py-2.5 rounded-full text-sm font-semibold mt-2">
+                Descargar CV
             </a>
         </div>
     </nav>
 
-    <!-- SECCIÓN INICIO/HERO: Presenta al usuario con foto y descripción principal -->
-    <section id="inicio" class="min-h-screen flex items-center justify-center px-6 py-20 relative overflow-hidden">
-        <div class="absolute inset-0 -z-10 pointer-events-none">
-            <div class="absolute top-1/4 left-1/4 w-72 h-72 bg-[#BFA2DB]/10 rounded-full blur-[80px]"></div>
-        </div>
-
-        <div class="max-w-6xl mx-auto w-full flex flex-col md:flex-row items-center gap-8 md:gap-20 relative z-10">
-
-            <div class="flex-1 flex justify-center" data-aos="fade-up">
-                <div class="relative w-48 h-48 md:w-80 md:h-80">
-                    <div class="absolute inset-0 bg-[#BFA2DB]/20 rounded-[2.5rem] scale-105 blur-xl"></div>
-
-                    <div
-                        class="relative w-full h-full rounded-[2.5rem] overflow-hidden border-4 border-white shadow-xl z-10">
-                        <img src="/portafolio/img/portada.png" alt="Luciano Aliaga" class="w-full h-full object-cover"
-                            onerror="this.src='https://via.placeholder.com/400x400?text=Luciano+Aliaga'">
-                    </div>
-                </div>
+    <!-- HERO PERFIL -->
+    <header class="py-16 md:py-24 px-6">
+        <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-10 md:gap-14">
+            
+            <div class="w-48 h-48 md:w-56 md:h-56 rounded-3xl overflow-hidden border-4 border-[#BFA2DB] shadow-xl flex-shrink-0">
+                <img src="./img/portada.png" alt="Luciano Aliaga" class="w-full h-full object-cover">
             </div>
 
-            <div class="flex-1 text-center md:text-left" data-aos="fade-up" data-aos-delay="200">
-                <div
-                    class="inline-flex items-center gap-2 bg-[#BFA2DB]/10 px-4 py-1.5 rounded-full mb-4 border border-[#BFA2DB]/20">
-                    <span class="text-[10px] font-black text-[#BFA2DB] uppercase tracking-widest">Analista Programador</span>
+            <div class="text-center md:text-left flex-1">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#BFA2DB]/20 text-[#2B2B2B] text-xs font-semibold mb-4">
+                    <span class="w-2 h-2 rounded-full bg-[#BFA2DB]"></span>
+                    Analista Programador &middot; Especialista TI
                 </div>
-
-                <h1 class="text-4xl md:text-6xl font-black text-[#2B2B2B] mb-4 leading-tight">
-                    Luciano Aliaga
-                </h1>
-
-                <p class="text-base text-gray-600 leading-relaxed mb-8 max-w-xl mx-auto md:mx-0">
-                    Especialista en infraestructura tecnológica y desarrollo seguro. Actualmente liderando el área
-                    informática educacional y fundando KoaLink.
+                <h1 class="text-4xl md:text-5xl font-extrabold text-[#2B2B2B] tracking-tight">Luciano Aliaga</h1>
+                <p class="text-base md:text-lg text-[#4A444A] mt-4 leading-relaxed max-w-2xl">
+                    Desarrollador de software con foco en arquitectura web, redes e infraestructura de ciberseguridad. Enfoque integral en el diseño de soluciones eficientes, seguras y escalables para proyectos empresariales.
                 </p>
-
-                <div class="flex flex-col sm:flex-row justify-center md:justify-start gap-4">
-                    <a href="#experiencia"
-                        class="bg-[#BFA2DB] text-white font-black px-8 py-3.5 rounded-xl text-sm shadow-lg shadow-[#BFA2DB]/20">
-                        Ver Trayectoria
-                    </a>
+                
+                <div class="flex flex-wrap justify-center md:justify-start gap-2.5 mt-6">
+                    <span class="text-xs bg-white border border-[#D9D9D9] text-[#4A444A] font-medium px-4 py-1.5 rounded-full shadow-sm">Desarrollo Web Full Stack</span>
+                    <span class="text-xs bg-white border border-[#D9D9D9] text-[#4A444A] font-medium px-4 py-1.5 rounded-full shadow-sm">Ciberseguridad Ofensiva & Defensiva</span>
+                    <span class="text-xs bg-white border border-[#D9D9D9] text-[#4A444A] font-medium px-4 py-1.5 rounded-full shadow-sm">Infraestructura & Redes</span>
+                    <span class="text-xs bg-white border border-[#D9D9D9] text-[#4A444A] font-medium px-4 py-1.5 rounded-full shadow-sm">Inteligencia Artificial</span>
                 </div>
             </div>
         </div>
-    </section>
+    </header>
 
-    <!-- SECCIÓN STATS: Panel de atributos (habilidades) con sistema de puntos y logros -->
-    <section id="stats" class="min-h-screen flex flex-col justify-center py-24 px-6 bg-[#f8f9fa]">
-        <div class="max-w-5xl mx-auto w-full">
-
-            <div data-aos="fade-up" class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-black text-[#2B2B2B] uppercase italic tracking-tighter">Panel de
-                    Atributos</h2>
-                <p class="text-[#BFA2DB] font-bold text-sm md:text-base uppercase tracking-widest">Sincronización con el
-                    Sistema</p>
-                <div class="w-16 h-1 bg-[#BFA2DB] mx-auto mt-4 rounded-full"></div>
-            </div>
-
-<!-- STATUS WINDOW: Ventana tipo consola/terminal que se anima al cargar -->
-                <!-- opacity-0 es removido por JavaScript después de delays -->
-                <div id="status-window"
-                class="bg-[#1a1a1a] border-2 border-[#BFA2DB] p-8 md:p-12 rounded-2xl shadow-[0_0_50px_rgba(191,162,219,0.2)] text-white font-mono relative overflow-hidden opacity-0 transition-opacity duration-1000">
-
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-20">
-
-                    <div class="space-y-10">
-                        <div class="border-b border-[#BFA2DB]/30 pb-8">
-                            <div class="flex justify-between items-start mb-6">
-                                <div>
-                                    <h3
-                                        class="text-[#BFA2DB] text-xs md:text-sm uppercase tracking-[0.4em] mb-2 animate-pulse font-black">
-                                        Estado: Activo</h3>
-                                    <span
-                                        class="text-3xl md:text-5xl font-black italic uppercase tracking-tighter hover:animate-pulse cursor-default transition-all hover:text-[#BFA2DB]"
-                                        id="player-name">
-                                        Luciano Aliaga
-                                    </span>
-                                </div>
-                                <div class="text-right">
-                                    <span class="text-[#BFA2DB] font-black text-3xl md:text-5xl italic">LVL. <span
-                                            id="player-lvl">--</span></span>
-                                </div>
-                            </div>
-                            <div class="inline-block bg-[#BFA2DB]/10 border-l-4 border-[#BFA2DB] px-6 py-3">
-                                <p class="text-xs md:text-sm text-gray-300 uppercase font-black tracking-widest">
-                                    Encargado de TI / Analista Programador
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="bg-black/40 p-6 rounded-2xl border border-[#BFA2DB]/20">
-                            <p class="text-xs md:text-sm text-[#BFA2DB] uppercase mb-4 font-black tracking-[0.2em]">
-                                Registro de Misiones:</p>
-                            <ul id="recent-achievements"
-                                class="text-xs md:text-sm space-y-3 text-gray-400 font-bold uppercase italic">
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="flex flex-col justify-center space-y-8">
-                        <h4 class="text-xs md:text-sm text-gray-500 uppercase tracking-[0.3em]">Distribución de
-                            Atributos:</h4>
-                        <div id="skills-container" class="space-y-8">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="absolute bottom-6 right-8 opacity-5 pointer-events-none hidden md:block">
-                    <span class="text-6xl font-black italic uppercase tracking-tighter text-[#BFA2DB]">KoaLink
-                        System</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECCIÓN EXPERIENCIA: Trayectoria educacional y profesional con tarjetas -->
-    <section id="experiencia" class="min-h-screen w-full flex flex-col justify-center px-6 py-24">
-        <div class="max-w-6xl mx-auto w-full">
-            <div data-aos="fade-up" class="text-center mb-16">
-                <h2 class="text-4xl font-black text-[#2B2B2B]">Trayectoria IT</h2>
-                <div class="w-16 h-1 bg-[#BFA2DB] mx-auto mt-4 rounded-full"></div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div data-aos="fade-up"
-                    class="bg-white/70 backdrop-blur-md p-8 rounded-[2.5rem] border border-white shadow-sm hover:shadow-xl transition-all">
-                    <div class="flex justify-between items-start mb-4">
-                        <h4 class="font-bold text-2xl text-[#2B2B2B]">Encargado de Informática</h4>
-                        <span
-                            class="text-xs font-black bg-[#BFA2DB]/10 text-[#BFA2DB] px-3 py-1 rounded-full uppercase tracking-wider">Sept
-                            2025 - Act.</span>
-                    </div>
-                    <p class="text-sm font-bold text-gray-400 mb-6 uppercase tracking-widest italic">Institución
-                        Educacional | Contrato SEP</p>
-                    <ul class="text-sm md:text-base text-[#4A444A] space-y-4">
-                        <li class="flex items-start gap-3">
-                            <span class="text-[#BFA2DB] font-bold">▹</span> Administrador de conectividad y redes
-                            institucionales.
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <span class="text-[#BFA2DB] font-bold">▹</span> Mantenimiento preventivo y correctivo de
-                            tablets y notebooks.
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <span class="text-[#BFA2DB] font-bold">▹</span> Soporte técnico especializado a personal
-                            docente y administrativo.
-                        </li>
-                    </ul>
-                </div>
-
-                <div data-aos="fade-up" data-aos-delay="100"
-                    class="bg-[#2B2B2B] p-8 rounded-[2.5rem] border border-gray-700 shadow-2xl text-white">
-                    <div class="flex justify-between items-start mb-4">
-                        <h4 class="font-bold text-2xl text-white">Fundador & Dev</h4>
-                        <span
-                            class="text-xs font-black bg-white/10 text-[#BFA2DB] px-3 py-1 rounded-full uppercase tracking-wider">Actualidad</span>
-                    </div>
-                    <p class="text-sm font-bold text-[#BFA2DB] mb-6 uppercase tracking-widest italic">KoaLink |
-                        Servicios Digitales</p>
-                    <ul class="text-sm md:text-base text-gray-300 space-y-4">
-                        <li class="flex items-start gap-3">
-                            <span class="text-[#BFA2DB] font-bold">▹</span> Creación de Landing Pages de alta
-                            conversión.
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <span class="text-[#BFA2DB] font-bold">▹</span> Implementación de sitios corporativos y
-                            portafolios modernos.
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <span class="text-[#BFA2DB] font-bold">▹</span> Consultoría en ciberseguridad y optimización
-                            web para PYMES.
-                        </li>
-                    </ul>
-                </div>
-
-                <div data-aos="fade-up" data-aos-delay="200"
-                    class="bg-white/70 backdrop-blur-md p-8 rounded-[2.5rem] border border-white shadow-sm hover:shadow-lg transition-all">
-                    <div class="flex justify-between items-start mb-4">
-                        <h4 class="font-bold text-xl text-[#2B2B2B]">Soporte Técnico</h4>
-                        <span
-                            class="text-xs font-black bg-gray-100 text-gray-500 px-3 py-1 rounded-full uppercase tracking-wider italic">Historial</span>
-                    </div>
-                    <p class="text-sm font-bold text-[#BFA2DB] mb-4 uppercase tracking-widest">Instituto Proavanza SPA
-                    </p>
-                    <p class="text-sm md:text-base text-[#4A444A] leading-relaxed">
-                        Atención directa y resolución de incidencias técnicas en plataformas de educación online
-                        (e-learning).
-                    </p>
-                </div>
-
-                <div data-aos="fade-up" data-aos-delay="300"
-                    class="bg-white/70 backdrop-blur-md p-8 rounded-[2.5rem] border border-white shadow-sm hover:shadow-lg transition-all">
-                    <div class="flex justify-between items-start mb-4">
-                        <h4 class="font-bold text-xl text-[#2B2B2B]">Ventas Especializadas</h4>
-                        <span
-                            class="text-xs font-black bg-gray-100 text-gray-500 px-3 py-1 rounded-full uppercase tracking-wider italic">Historial</span>
-                    </div>
-                    <p class="text-sm font-bold text-[#BFA2DB] mb-4 uppercase tracking-widest">Mr. Tecno SPA</p>
-                    <p class="text-sm md:text-base text-[#4A444A] leading-relaxed">
-                        Asesoría técnica en hardware de alto rendimiento y gestión de componentes informáticos.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECCIÓN CERTIFICACIONES: Registro de misiones/certificaciones completadas por categoría -->
-    <section id="certificaciones" class="min-h-screen flex flex-col justify-center py-24 px-6 bg-[#f8f9fa]">
-        <div class="max-w-6xl mx-auto w-full">
-
-            <div data-aos="fade-up" class="text-center mb-16">
-                <h2 class="text-4xl font-black text-[#2B2B2B] uppercase italic tracking-tighter">
-                    Registro de Misiones
-                </h2>
-                <p class="text-[#BFA2DB] font-bold text-sm uppercase tracking-widest">Estado Actual: Jugador de Clase S
+    <!-- SECCIÓN: CERTIFICACIONES Y ACREDITACIONES -->
+    <main class="py-16 md:py-24 px-6 bg-slate-50/50 border-t border-[#D9D9D9]/40">
+        <div class="max-w-6xl mx-auto space-y-16">
+            
+            <div class="text-center space-y-3">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-[#2B2B2B] tracking-tight">Acreditaciones & Certificaciones</h2>
+                <p class="text-sm md:text-base text-[#4A444A] max-w-xl mx-auto">
+                    Credenciales oficiales emitidas por Cisco Networking Academy, Microsoft y BIG school con validación internacional.
                 </p>
-                <div class="w-16 h-1 bg-[#BFA2DB] mx-auto mt-4 rounded-full"></div>
+                <!-- Separador Lila Estilo KoaLink -->
+                <div class="w-20 h-1 bg-[#BFA2DB] rounded-full mx-auto !mt-5"></div>
             </div>
 
-            <div class="mb-20">
-                <div class="flex items-center gap-4 mb-10">
-                    <div class="bg-[#BFA2DB] p-2 rounded-lg shadow-lg shadow-[#BFA2DB]/20">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
-                            stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M12 2H2v10h10V2z" />
-                            <path d="M22 12H12v10h10V12z" />
-                            <path d="M12 12H2v10h10V12z" />
-                            <path d="M22 2H12v10h10V2z" />
-                        </svg>
-                    </div>
-                    <div>
-                        <h3 class="text-2xl font-black text-[#2B2B2B]">Cisco Academy</h3>
-                        <p class="text-sm font-bold text-gray-400 uppercase tracking-widest">Entrenamiento de
-                            Infraestructura</p>
-                    </div>
+            <!-- Ciberseguridad -->
+            <section class="space-y-4">
+                <div class="flex items-center gap-3">
+                    <span class="text-xs font-bold uppercase tracking-wider text-[#4A444A]">Seguridad Ofensiva & Defensiva</span>
+                    <div class="flex-1 h-px bg-[#D9D9D9]"></div>
                 </div>
+                <div id="contenedorSeguridad" class="grid grid-cols-1 md:grid-cols-2 gap-6"></div>
+            </section>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div
-                        class="group bg-[#2B2B2B] p-8 rounded-[2rem] border border-gray-800 hover:border-[#BFA2DB] transition-all relative overflow-hidden">
-                        <div class="flex justify-between items-start mb-6">
-                            <span
-                                class="text-xs font-black bg-[#BFA2DB]/10 text-[#BFA2DB] border border-[#BFA2DB]/20 px-3 py-1 rounded-full uppercase">Clase:
-                                Redes</span>
-                            <span class="text-xs font-black text-gray-500 italic">RANK: A</span>
-                        </div>
-                        <h4 class="text-white font-bold text-xl mb-4 group-hover:text-[#BFA2DB] transition">Dispositivos
-                            de Red</h4>
-                        <p class="text-gray-400 text-sm leading-relaxed mb-6">Configuración de routers y switches.
-                            Gestión de conectividad institucional.</p>
-                        <div class="flex items-center gap-2 text-xs font-bold text-[#BFA2DB]">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <path d="M20 6 9 17l-5-5" />
-                            </svg>
-                            LOGRO OBTENIDO (2025)
-                        </div>
-                    </div>
-
-                    <div
-                        class="group bg-[#2B2B2B] p-8 rounded-[2rem] border border-gray-800 hover:border-[#BFA2DB] transition-all relative overflow-hidden">
-                        <div class="flex justify-between items-start mb-6">
-                            <span
-                                class="text-xs font-black bg-[#BFA2DB]/10 text-[#BFA2DB] border border-[#BFA2DB]/20 px-3 py-1 rounded-full uppercase">Clase:
-                                Desarrollo</span>
-                            <span class="text-xs font-black text-yellow-500 italic">RANK: S</span>
-                        </div>
-                        <h4 class="text-white font-bold text-xl mb-4 group-hover:text-[#BFA2DB] transition">Python
-                            Fundamental (1 & 2)</h4>
-                        <p class="text-gray-400 text-sm leading-relaxed mb-6">Automatización de procesos y lógica de
-                            datos. Entrenamiento de 70 horas.</p>
-                        <div class="flex items-center gap-2 text-xs font-bold text-[#BFA2DB]">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <path d="M20 6 9 17l-5-5" />
-                            </svg>
-                            LOGRO OBTENIDO (2024)
-                        </div>
-                    </div>
-
-                    <div
-                        class="group bg-[#2B2B2B] p-8 rounded-[2rem] border border-gray-800 hover:border-[#BFA2DB] transition-all relative overflow-hidden">
-                        <div class="flex justify-between items-start mb-6">
-                            <span
-                                class="text-xs font-black bg-[#BFA2DB]/10 text-[#BFA2DB] border border-[#BFA2DB]/20 px-3 py-1 rounded-full uppercase">Clase:
-                                Seguridad</span>
-                            <span class="text-xs font-black text-gray-500 italic">RANK: A</span>
-                        </div>
-                        <h4 class="text-white font-bold text-xl mb-4 group-hover:text-[#BFA2DB] transition">
-                            Ciberseguridad</h4>
-                        <p class="text-gray-400 text-sm leading-relaxed mb-6">Protección de infraestructuras y gestión
-                            de vulnerabilidades digitales.</p>
-                        <div class="flex items-center gap-2 text-xs font-bold text-[#BFA2DB]">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <path d="M20 6 9 17l-5-5" />
-                            </svg>
-                            LOGRO OBTENIDO
-                        </div>
-                    </div>
+            <!-- Redes -->
+            <section class="space-y-4">
+                <div class="flex items-center gap-3">
+                    <span class="text-xs font-bold uppercase tracking-wider text-[#4A444A]">Redes & Infraestructura IT</span>
+                    <div class="flex-1 h-px bg-[#D9D9D9]"></div>
                 </div>
-            </div>
+                <div id="contenedorRedes" class="grid grid-cols-1 md:grid-cols-3 gap-6"></div>
+            </section>
 
-            <div class="mb-20">
-                <div class="flex items-center gap-4 mb-10">
-                    <div class="bg-[#BFA2DB] p-2 rounded-lg shadow-lg shadow-[#BFA2DB]/20">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
-                            stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10" />
-                            <path d="m9 12 2 2 4-4" />
-                        </svg>
-                    </div>
-                    <div>
-                        <h3 class="text-2xl font-black text-[#2B2B2B]">Udemy Mastery</h3>
-                        <p class="text-sm font-bold text-gray-400 uppercase tracking-widest">Habilidades Especiales
-                            Desbloqueadas</p>
-                    </div>
+            <!-- Desarrollo e IA -->
+            <section class="space-y-4">
+                <div class="flex items-center gap-3">
+                    <span class="text-xs font-bold uppercase tracking-wider text-[#4A444A]">Desarrollo & Tecnologías Emergentes</span>
+                    <div class="flex-1 h-px bg-[#D9D9D9]"></div>
                 </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div
-                        class="group bg-[#2B2B2B] p-8 rounded-[2rem] border border-gray-800 hover:border-[#BFA2DB] hover:shadow-[0_0_30px_rgba(191,162,219,0.15)] transition-all relative overflow-hidden">
-                        <div class="flex justify-between items-start mb-6 text-xs font-black">
-                            <span
-                                class="bg-[#BFA2DB]/10 text-[#BFA2DB] border border-[#BFA2DB]/20 px-3 py-1 rounded-full uppercase">Clase:
-                                Seguridad</span>
-                            <span class="text-yellow-500 italic uppercase">RANK: S</span>
-                        </div>
-                        <h4
-                            class="text-white font-bold text-xl mb-4 group-hover:text-[#BFA2DB] transition uppercase leading-tight">
-                            Penetration Testing & Ethical Hacking</h4>
-                        <p class="text-gray-400 text-sm leading-relaxed mb-6">Uso de Python 3 para auditorías ofensivas
-                            y defensa de servidores escolares.</p>
-                        <div class="flex flex-col gap-2">
-                            <div class="flex items-center gap-2 text-xs font-bold text-[#BFA2DB]">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
-                                    stroke-linejoin="round">
-                                    <path d="M20 6 9 17l-5-5" />
-                                </svg>
-                                LOGRO OBTENIDO (JUL 2024)
-                            </div>
-                            <div class="flex justify-between items-center mt-1">
-                                <span class="text-[10px] text-gray-600 font-mono uppercase">ID: UC-8ae82ac8</span>
-                                <a href="https://www.udemy.com/certificate/UC-8ae82ac8-050a-49e2-b46e-0619589c7f2e/"
-                                    target="_blank" class="text-gray-500 hover:text-white transition-colors">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round">
-                                        <path d="M15 3h6v6" />
-                                        <path d="M10 14 21 3" />
-                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                                    </svg>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="mb-20">
-                <div class="flex items-center gap-4 mb-10">
-                    <div class="bg-[#BFA2DB] p-2 rounded-lg shadow-lg shadow-[#BFA2DB]/20">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
-                            stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="m18 16 4-4-4-4" />
-                            <path d="m6 8-4 4 4 4" />
-                            <path d="m14.5 4-5 16" />
-                        </svg>
-                    </div>
-                    <div>
-                        <h3 class="text-2xl font-black text-[#2B2B2B]">Código Facilito</h3>
-                        <p class="text-sm font-bold text-gray-400 uppercase tracking-widest">Dominio de Herramientas</p>
-                    </div>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div
-                        class="group bg-[#2B2B2B] p-8 rounded-[2rem] border border-gray-800 hover:border-[#BFA2DB] transition-all relative overflow-hidden">
-                        <div class="flex justify-between items-start mb-6">
-                            <span
-                                class="text-xs font-black bg-[#BFA2DB]/10 text-[#BFA2DB] border border-[#BFA2DB]/20 px-3 py-1 rounded-full uppercase">Clase:
-                                Git</span>
-                            <span class="text-xs font-black text-gray-500 italic">RANK: A</span>
-                        </div>
-                        <h4 class="text-white font-bold text-xl mb-4 group-hover:text-[#BFA2DB] transition">Curso
-                            Profesional de Git</h4>
-                        <p class="text-gray-400 text-sm leading-relaxed mb-6">Gestión de ramas y flujos colaborativos
-                            para proyectos como NexStore.</p>
-                        <div class="flex flex-col gap-2">
-                            <div class="flex items-center gap-2 text-xs font-bold text-[#BFA2DB]">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
-                                    stroke-linejoin="round">
-                                    <path d="M20 6 9 17l-5-5" />
-                                </svg>
-                                LOGRO OBTENIDO (DIC 2025)
-                            </div>
-                            <span class="text-[10px] text-gray-600 font-mono">ID: fa21a839</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                <div id="contenedorDesarrollo" class="grid grid-cols-1 md:grid-cols-3 gap-6"></div>
+            </section>
 
         </div>
-    </section>
+    </main>
 
-    <!-- FOOTER/CONTACTO: Sección final con call-to-action y enlaces a redes sociales -->
-    <footer id="contacto"
-        class="min-h-screen w-full flex flex-col justify-center items-center bg-[#2B2B2B] text-white px-6 py-24 text-center relative overflow-hidden">
-
-        <div
-            class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-1 bg-gradient-to-r from-transparent via-[#BFA2DB] to-transparent">
-        </div>
-        <div class="absolute -bottom-48 -left-48 w-96 h-96 bg-[#BFA2DB]/5 rounded-full blur-[120px]"></div>
-
-        <div class="max-w-4xl w-full" data-aos="zoom-out">
-            <div class="mb-8 flex justify-center">
-                <div
-                    class="w-20 h-20 bg-[#BFA2DB]/10 border-2 border-[#BFA2DB] rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(191,162,219,0.3)]">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
-                        stroke="#BFA2DB" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                        <path
-                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                    </svg>
-                </div>
-            </div>
-
-            <h2 class="text-4xl md:text-6xl font-black mb-6 leading-tight uppercase tracking-tighter italic">
-                Misión Final: <br>
-                <span class="text-[#BFA2DB]">Subir de Nivel</span>
-            </h2>
-
-            <p class="text-gray-400 text-lg md:text-xl mb-12 max-w-2xl mx-auto leading-relaxed">
-                ¿Tienes un proyecto en mente o buscas un perfil técnico comprometido con la excelencia? La ventana de
-                colaboración está abierta.
+    <!-- FOOTER OSCURO ESTILO KOALINK -->
+    <footer class="bg-[#2B2B2B] text-white py-20 px-6 text-center">
+        <div class="max-w-3xl mx-auto space-y-6">
+            <h3 class="text-3xl md:text-4xl font-extrabold">¿Listo para el <span class="text-[#BFA2DB]">siguiente nivel?</span></h3>
+            <p class="text-[#D9D9D9] text-sm md:text-base">
+                Construyamos juntos soluciones digitales seguras, rápidas y optimizadas para tu infraestructura.
             </p>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16 text-left">
-                <div class="bg-white/5 p-6 rounded-2xl border border-white/10">
-                    <p class="text-[#BFA2DB] font-black text-xs uppercase mb-2">Recompensa I</p>
-                    <p class="text-sm font-bold">Soluciones Web Seguras (KoaLink)</p>
-                </div>
-                <div class="bg-white/5 p-6 rounded-2xl border border-white/10">
-                    <p class="text-[#BFA2DB] font-black text-xs uppercase mb-2">Recompensa II</p>
-                    <p class="text-sm font-bold">Infraestructura IT de Alto Nivel</p>
-                </div>
-                <div class="bg-white/5 p-6 rounded-2xl border border-white/10">
-                    <p class="text-[#BFA2DB] font-black text-xs uppercase mb-2">Recompensa III</p>
-                    <p class="text-sm font-bold">Desarrollo de Software Escalable</p>
-                </div>
-            </div>
-
-            <div class="flex flex-col items-center gap-10">
-
-                <a href="https://wa.me/56966888378" target="_blank"
-                    class="w-full md:w-auto bg-[#BFA2DB] text-white font-black px-12 py-5 rounded-2xl hover:scale-105 transition transform shadow-[0_20px_40px_rgba(191,162,219,0.2)] text-xl flex items-center justify-center gap-3">
-                    <span>Aceptar Misión</span>
-
+            <div class="pt-2">
+                <a href="https://wa.me/56966888378" target="_blank" class="inline-block bg-[#BFA2DB] text-white font-semibold px-8 py-3.5 rounded-full shadow-lg hover:opacity-90 hover:scale-105 transition transform">
+                    WhatsApp
                 </a>
-
-                <div class="flex flex-wrap justify-center gap-4">
-                    <a href="https://github.com/luciano-aa-brr" target="_blank"
-                        class="p-4 bg-white/5 rounded-xl hover:bg-[#BFA2DB]/20 transition border border-white/10 group">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                            class="group-hover:text-[#BFA2DB] transition">
-                            <path
-                                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-                            </path>
-                        </svg>
-                    </a>
-
-                    <a href="https://www.linkedin.com/in/luciano-aliaga-0018a0268/" target="_blank"
-                        class="p-4 bg-white/5 rounded-xl hover:bg-[#BFA2DB]/20 transition border border-white/10 group">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                            class="group-hover:text-[#BFA2DB] transition">
-                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
-                            </path>
-                            <rect width="4" height="12" x="2" y="9"></rect>
-                            <circle cx="4" cy="4" r="2"></circle>
-                        </svg>
-                    </a>
-
-                    <a href="https://www.instagram.com/koalinkdev/" target="_blank"
-                        class="p-4 bg-white/5 rounded-xl hover:bg-[#BFA2DB]/20 transition border border-white/10 group">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                            class="group-hover:text-[#BFA2DB] transition">
-                            <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
-                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                            <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
-                        </svg>
-                    </a>
-
-                    <a href="https://www.tiktok.com/@koalinkdev" target="_blank"
-                        class="p-4 bg-white/5 rounded-xl hover:bg-[#BFA2DB]/20 transition border border-white/10 group">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                            class="group-hover:text-[#BFA2DB] transition">
-                            <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path>
-                        </svg>
-                    </a>
-                </div>
             </div>
-
-            <div class="mt-24 pt-8 border-t border-white/5">
-                <p class="text-gray-600 text-xs font-bold uppercase tracking-[0.4em]">
-                    © 2026 Luciano Aliaga | Analista Programador
-                </p>
+            <div class="pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-white/50">
+                <p>&copy; 2026 KoaLink &middot; Hecho con HTML & Tailwind CSS</p>
+                <div class="flex gap-6">
+                    <a href="https://github.com/luciano-aa-brr" target="_blank" class="hover:text-white transition">GitHub</a>
+                    <a href="https://www.linkedin.com/in/luciano-aliaga/" target="_blank" class="hover:text-white transition">LinkedIn</a>
+                    <a href="https://www.instagram.com/koalinkdev?utm_source=ig_web_button_share_sheet&mdxt=ZDNlZDc0MzIxNw==" target="_blank" class="hover:text-white transition">Instagram</a>
+                </div>
             </div>
         </div>
     </footer>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- SCRIPT DEL MENÚ MÓVIL -->
     <script>
-        /**
-         * ==================================================================
-         * SCRIPT PRINCIPAL - PORTAFOLIO DE LUCIANO ALIAGA
-         * ==================================================================
-         * Este script gestiona:
-         * - Animaciones de scroll (AOS)
-         * - Navegación interactiva con scroll suave
-         * - Efectos dinámicos del navbar
-         * - Sistema de visualización de habilidades y certificaciones
-         * - Sonidos del sistema
-         * ==================================================================
-         */
+        const BotonMenu = document.getElementById('BotonMenu');
+        const MenuMovil = document.getElementById('MenuMovil');
 
-        /**
-         * SECCIÓN 1: INICIALIZACIÓN DE ANIMACIONES (AOS - Animate On Scroll)
-         * AOS permite animar elementos cuando entran en el viewport
-         */
-        AOS.init({
-            duration: 800,      // Duración de la animación en ms
-            once: true,         // La animación solo ocurre una vez
-            offset: 100         // Activar animación 100px antes de que el elemento sea visible
+        BotonMenu.addEventListener('click', (e) => {
+            e.stopPropagation();
+            MenuMovil.classList.toggle('hidden');
+            MenuMovil.classList.toggle('flex');
         });
 
-        // Seleccionar elementos del DOM necesarios para el menú móvil y navbar
-        const btn = document.getElementById('btnMenu');
-        const menu = document.getElementById('menuMovil');
-        const navbar = document.getElementById('navbar');
-
-        /**
-         * SECCIÓN 2: LÓGICA DEL MENÚ MÓVIL
-         * Permite abrir/cerrar el menú en dispositivos móviles y cerrar al hacer click
-         * Solo se ejecuta si los elementos del menú existen en el DOM
-         */
-        if (btn && menu) {
-            // Toggle: mostrar/ocultar menú al hacer click en el botón
-            btn.addEventListener('click', () => {
-                menu.classList.toggle('hidden');
-            });
-
-            // Cerrar menú automáticamente cuando el usuario hace click en un link de navegación
-            menu.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', () => {
-                    menu.classList.add('hidden');
-                });
-            });
-        }
-
-        /**
-         * SECCIÓN 3: NAVEGACIÓN LIMPIA CON SCROLL SUAVE
-         * - Previene que aparezca '#' en la URL al hacer click en enlaces internos
-         * - Implementa scroll suave hacia las secciones
-         * - Compensa la altura del navbar fijo (80px)
-         */
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                const targetId = this.getAttribute('href');
-
-                // Solo procesa si el href es un ID válido (comienza con '#')
-                if (targetId.startsWith('#') && targetId.length > 1) {
-                    e.preventDefault(); // Evita la navegación por defecto del navegador
-
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        // Offset para que el contenido no quede oculto bajo el navbar fijo
-                        const offset = 80;
-                        const targetPosition = targetElement.offsetTop - offset;
-
-                        // Scroll suave hacia el objetivo
-                        window.scrollTo({
-                            top: targetPosition,
-                            behavior: 'smooth'
-                        });
-                    }
-                }
-            });
-        });
-
-        /**
-         * SECCIÓN 4: EFECTO VISUAL DEL NAVBAR AL HACER SCROLL
-         * Añade sombra y fondo opaco cuando el usuario hace scroll
-         * Mejora la legibilidad del contenido que pasa bajo el navbar
-         */
-        if (navbar) {
-            window.addEventListener('scroll', () => {
-                // Si el usuario ha hecho scroll más de 50px
-                if (window.scrollY > 50) {
-                    // Activar estilo de navbar "sólido"
-                    navbar.classList.add('bg-white/90', 'shadow-md');
-                } else {
-                    // Volver al estilo transparente
-                    navbar.classList.remove('bg-white/90', 'shadow-md');
-                }
-            });
-        }
-
-        /**
-         * SECCIÓN 5: DATOS DE CERTIFICACIONES Y HABILIDADES
-         * Array que contiene la información de cada certificación/logro
-         * Campos:
-         *   - name: Nombre de la certificación
-         *   - category: Categoría a la que pertenece (Backend, Seguridad, etc.)
-         *   - weight: Peso/puntos que aporta a su categoría (max 100)
-         */
-        const certificationData = [
-            { name: "Máster Ethical Hacking", category: "Seguridad", weight: 15 },
-            { name: "Python Fundamental 1 & 2", category: "Backend", weight: 12 },
-            { name: "Gestión TI Institucional", category: "Liderazgo", weight: 20 }, 
-            { name: "Cisco Networking Pro", category: "Infraestructura", weight: 15 },
-            { name: "Git & Flujo Profesional", category: "Herramientas", weight: 10 },
-            { name: "Desarrollo KoaLink", category: "Backend", weight: 8 }
-        ];
-
-        /**
-         * SECCIÓN 6: GENERADOR DE SONIDO DEL SISTEMA
-         * Crea un pitido de 8-bit usando Web Audio API
-         * Emite un barrido de frecuencia: 880Hz → 440Hz durante 0.4 segundos
-         * Tiene manejo de errores para navegadores que no soporten Web Audio
-         */
-        function playSystemSound() {
-            try {
-                // Crear contexto de audio (compatible con navegadores antiguos)
-                const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-                
-                // Crear oscilador (generador de onda)
-                const osc = audioCtx.createOscillator();
-                
-                // Crear control de volumen (ganancia)
-                const gain = audioCtx.createGain();
-                
-                // Configurar tipo de onda: square (sonido "retro" tipo Atari)
-                osc.type = 'square';
-                
-                // Frecuencia inicial: 880 Hz (nota alta)
-                osc.frequency.setValueAtTime(880, audioCtx.currentTime);
-                
-                // Barrido de frecuencia exponencial a 440 Hz en 150ms (nota más baja)
-                osc.frequency.exponentialRampToValueAtTime(440, audioCtx.currentTime + 0.15);
-                
-                // Volumen inicial: 3% (muy bajo para no abrumar)
-                gain.gain.setValueAtTime(0.03, audioCtx.currentTime);
-                
-                // Reducir volumen exponencialmente a 1% en 400ms (fade out)
-                gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.4);
-                
-                // Conectar: oscilador → ganancia → salida de audio
-                osc.connect(gain);
-                gain.connect(audioCtx.destination);
-                
-                // Iniciar y detener el sonido
-                osc.start();
-                osc.stop(audioCtx.currentTime + 0.4);
-                
-            } catch (e) { 
-                // Si Web Audio no está disponible, registrar en consola
-                console.log("Audio interactivo en espera.");
+        document.addEventListener('click', (e) => {
+            if (!MenuMovil.contains(e.target) && !BotonMenu.contains(e.target)) {
+                MenuMovil.classList.add('hidden');
+                MenuMovil.classList.remove('flex');
             }
-        }
-
-        /**
-         * SECCIÓN 7: INICIALIZACIÓN DEL SISTEMA COMPLETO
-         * Función principal que:
-         * 1. Genera las barras de habilidades dinámicamente
-         * 2. Crea la lista de logros recientes
-         * 3. Anima la ventana de estado
-         * 4. Calcula el nivel del jugador
-         * 5. Anima los porcentajes de habilidades
-         */
-        function initializeSystem() {
-            // Obtener referencias a elementos del DOM donde se mostrarán datos
-            const container = document.getElementById('skills-container');
-            const achievementsList = document.getElementById('recent-achievements');
-            const statusWindow = document.getElementById('status-window');
-            
-            // Definir las categorías de habilidades que se mostrarán
-            const categories = ["Backend", "Seguridad", "Infraestructura", "Liderazgo", "Herramientas"];
-
-            /**
-             * BUCLE 1: Generar barras de habilidades por categoría
-             * Para cada categoría, calcula los puntos totales y dibuja una barra de progreso
-             */
-            categories.forEach(cat => {
-                // Filtrar certificaciones de esta categoría y sumar sus pesos
-                const totalPoints = certificationData
-                    .filter(c => c.category === cat)
-                    .reduce((acc, curr) => acc + curr.weight, 0);
-                
-                // Limitar a 100% máximo
-                const points = Math.min(totalPoints, 100);
-
-                // Inyectar HTML: barra de habilidad con etiqueta y porcentaje
-                container.innerHTML += `
-                <div>
-                    <div class="flex justify-between text-[11px] md:text-sm uppercase mb-2 font-black tracking-widest">
-                        <!-- Mostrar símbolo especial ★ para "Liderazgo" (categoría destacada) -->
-                        <span class="${cat === 'Liderazgo' ? 'text-yellow-500' : 'text-gray-300'}">
-                            ${cat === 'Liderazgo' ? '★ ' + cat : cat}
-                        </span>
-                        <!-- Mostrar el porcentaje en color púrpura -->
-                        <span class="text-[#BFA2DB]">${points}%</span>
-                    </div>
-                    <!-- Contenedor de la barra de progreso -->
-                    <div class="h-2 w-full bg-gray-900 rounded-full border border-white/5 p-[1px]">
-                        <!-- Barra que se anima: comienza en 0% y llega a su valor objetivo -->
-                        <div class="h-full bg-[#BFA2DB] shadow-[0_0_20px_#BFA2DB] transition-all duration-[3000ms] ease-in-out" 
-                             style="width: 0%" 
-                             data-target-width="${points}%">
-                        </div>
-                    </div>
-                </div>
-            `;
-            });
-
-            /**
-             * BUCLE 2: Generar lista de logros recientes
-             * Toma los primeros 4 logros y los muestra en formato de lista animada
-             */
-            certificationData.slice(0, 4).forEach(cert => {
-                achievementsList.innerHTML += `
-                <li class="flex items-center gap-3">
-                    <!-- Símbolo animado » con efecto pulse -->
-                    <span class="text-[#BFA2DB] animate-pulse">»</span>
-                    <span>${cert.name}</span>
-                </li>
-            `;
-            });
-
-            /**
-             * FINAL: Animar la ventana de estado
-             * Espera 800ms, luego:
-             * - Revela la ventana (quita opacity-0)
-             * - Reproduce el sonido del sistema
-             * - Muestra el nivel (10 + cantidad de certificaciones)
-             * - Anima las barras de habilidades (después de otro delay)
-             */
-            setTimeout(() => {
-                // Remover clase opacity-0 para revelar la ventana con transición suave
-                statusWindow.classList.remove('opacity-0');
-                
-                // Reproducir sonido característico del sistema
-                playSystemSound();
-                
-                // Establecer el nivel del jugador: 10 + número de certificaciones
-                document.getElementById('player-lvl').innerText = 10 + certificationData.length;
-                
-                // Pequeño delay antes de animar las barras (para efecto secuencial)
-                setTimeout(() => {
-                    // Animar todas las barras: cambiar width de 0% a su valor objetivo
-                    document.querySelectorAll('[data-target-width]').forEach(bar => {
-                        bar.style.width = bar.getAttribute('data-target-width');
-                    });
-                }, 500);
-            }, 800);
-        }
-
-        /**
-         * ACTIVADOR: Esperar a que el DOM esté completamente cargado
-         * Una vez listo, ejecutar la inicialización del sistema
-         */
-        document.addEventListener('DOMContentLoaded', initializeSystem);
+        });
     </script>
-</body>
 
+    <!-- SCRIPT DE DATOS DINÁMICOS -->
+    <script src="./certificaciones.js"></script>
+</body>
 </html>

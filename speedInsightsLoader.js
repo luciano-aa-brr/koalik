@@ -1,3 +1,4 @@
+// Nota: Este script carga de forma dinámica el tag de Speed Insights de Vercel.
 (function() {
     // 1. Inicialización de Vercel Speed Insights
     window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
