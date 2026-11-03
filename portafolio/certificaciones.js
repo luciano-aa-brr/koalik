@@ -59,12 +59,12 @@ const listadoCredenciales = [
 ];
 
 // Función para generar la tarjeta HTML con Tailwind CSS
-function crearTarjeta(item) {
+function crearTarjeta(item, indice) {
     return `
-        <article class="bg-white p-5 rounded-2xl border border-[#D9D9D9] hover:border-[#BFA2DB] transition shadow-sm flex flex-col justify-between">
+        <article data-aos="fade-up" data-aos-delay="${Math.min(indice * 80, 320)}" class="bg-white/70 backdrop-blur-sm p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl hover:shadow-[#BFA2DB]/10 hover:border-[#BFA2DB]/30 transition-all duration-300 flex flex-col justify-between">
             <div>
                 <div class="flex items-center justify-between text-xs font-semibold text-[#4A444A] mb-3">
-                    <span class="bg-[#FAFAFA] border border-[#D9D9D9] px-2 py-0.5 rounded">${item.entidad}</span>
+                    <span class="bg-[#BFA2DB]/10 border border-[#BFA2DB]/10 px-2.5 py-1 rounded-full">${item.entidad}</span>
                     <span>${item.fecha}</span>
                 </div>
                 <h4 class="font-bold text-[#2B2B2B] text-sm leading-snug mb-2">${item.titulo}</h4>
@@ -80,8 +80,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const contenedorRedes = document.getElementById("contenedorRedes");
     const contenedorDesarrollo = document.getElementById("contenedorDesarrollo");
 
-    listadoCredenciales.forEach(item => {
-        const tarjetaHtml = crearTarjeta(item);
+    listadoCredenciales.forEach((item, indice) => {
+        const tarjetaHtml = crearTarjeta(item, indice);
         if (item.categoria === "seguridad" && contenedorSeguridad) {
             contenedorSeguridad.innerHTML += tarjetaHtml;
         } else if (item.categoria === "redes" && contenedorRedes) {
@@ -90,4 +90,6 @@ document.addEventListener("DOMContentLoaded", () => {
             contenedorDesarrollo.innerHTML += tarjetaHtml;
         }
     });
+
+    AOS.refresh();
 });
