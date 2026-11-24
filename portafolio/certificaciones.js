@@ -191,7 +191,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const accionDiv = document.getElementById('modal-accion');
         if (accionDiv) {
-            accionDiv.innerHTML = `<span class="px-3.5 py-1.5 rounded-xl bg-emerald-50 text-emerald-700 text-xs font-bold border border-emerald-200">✓ Credencial Verificada</span>`;
+            accionDiv.innerHTML = `
+                <span class="inline-flex items-center gap-1.5 whitespace-nowrap px-3.5 py-1.5 rounded-full bg-emerald-50 text-emerald-700 text-xs font-bold border border-emerald-200">
+                    <span>✓</span>
+                    <span>Credencial Verificada</span>
+                </span>
+            `;
         }
 
         modal.classList.remove('hidden');
