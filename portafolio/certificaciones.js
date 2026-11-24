@@ -1,5 +1,4 @@
 // Base de datos de acreditaciones y certificaciones
-// Para agregar una nueva, solo añade un objeto al arreglo manteniendo esta estructura
 const credenciales = [
     {
         titulo: "Programación Avanzada",
@@ -8,8 +7,7 @@ const credenciales = [
         categoria: "Academico",
         etiqueta: "Formación Académica",
         horas: "270 horas pedagógicas",
-        descripcion: "Certificación académica oficial de la carrera Analista Programador. Desarrollo de software estructurado y orientado a objetos.",
-        archivo: "doc/certificadoProgramacionAvanzada.pdf",
+        descripcion: "Certificación académica oficial de la carrera Analista Programador. Desarrollo de software estructurado, patrones y programación orientada a objetos.",
         codigo: "Folio 899802 · Cód: U5GTRSJO"
     },
     {
@@ -19,8 +17,7 @@ const credenciales = [
         categoria: "Academico",
         etiqueta: "Formación Académica",
         horas: "162 horas pedagógicas",
-        descripcion: "Certificación académica en levantamiento de requerimientos, modelamiento y arquitectura base de sistemas.",
-        archivo: "doc/certificadoDiseñoBasicoDeSoftware.pdf",
+        descripcion: "Certificación académica en levantamiento de requerimientos, modelamiento de datos y arquitectura base de sistemas.",
         codigo: "Folio 899804 · Cód: MSUE0F5G"
     },
     {
@@ -31,7 +28,6 @@ const credenciales = [
         etiqueta: "Ciberseguridad",
         horas: "6 horas lectivas",
         descripcion: "Jornadas intensivas de análisis de vulnerabilidades, pruebas de penetración y seguridad en aplicaciones web.",
-        archivo: null,
         codigo: "Validación BIG school"
     },
     {
@@ -42,7 +38,6 @@ const credenciales = [
         etiqueta: "Ciberseguridad",
         horas: "Insignia Verificada",
         descripcion: "Fundamentos de defensa perimetral, vectores de ataque, privacidad de datos y mitigación de amenazas.",
-        archivo: null,
         codigo: "Cisco Verified Badge"
     },
     {
@@ -53,7 +48,6 @@ const credenciales = [
         etiqueta: "Redes & Infraestructura",
         horas: "22 horas",
         descripcion: "Configuración inicial, administración y conectividad segura de switches y routers en entornos empresariales.",
-        archivo: null,
         codigo: "Cisco Verified Badge"
     },
     {
@@ -64,7 +58,6 @@ const credenciales = [
         etiqueta: "Redes & Infraestructura",
         horas: "22 horas",
         descripcion: "Modelos OSI/TCP-IP, protocolos de comunicación y direccionamiento IPv4/IPv6.",
-        archivo: null,
         codigo: "Cisco Verified Badge"
     },
     {
@@ -75,7 +68,6 @@ const credenciales = [
         etiqueta: "Redes & Infraestructura",
         horas: "Insignia Verificada",
         descripcion: "Hardware computacional, arquitectura de sistemas operativos, diagnóstico y soporte técnico integral.",
-        archivo: null,
         codigo: "Cisco Verified Badge"
     },
     {
@@ -86,7 +78,6 @@ const credenciales = [
         etiqueta: "Desarrollo & IA",
         horas: "6 horas",
         descripcion: "Integración de modelos de lenguaje e inteligencia artificial generativa en flujos de desarrollo moderno.",
-        archivo: "doc/cursoIniciacionAlDesarrolloConIA.pdf",
         codigo: "Certificado Oficial"
     },
     {
@@ -97,7 +88,6 @@ const credenciales = [
         etiqueta: "Desarrollo & IA",
         horas: "15 horas (Nota: 6,8)",
         descripcion: "Programación del lado del cliente, manipulación del DOM y lógica interactiva web.",
-        archivo: "doc/javaScript1.pdf",
         codigo: "Puntaje: 96,67%"
     },
     {
@@ -108,7 +98,6 @@ const credenciales = [
         etiqueta: "Desarrollo & IA",
         horas: "70 horas totales",
         descripcion: "Programación procedural y orientada a objetos, estructuras de datos y desarrollo de scripts en Python.",
-        archivo: null,
         codigo: "Python Essentials 1 & 2"
     }
 ];
@@ -167,7 +156,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="pt-5 border-t border-gray-50 flex items-center justify-between">
                     <span class="text-[10px] text-gray-400 font-bold uppercase tracking-wider">${item.horas}</span>
                     <span class="px-4 py-2 rounded-xl bg-[#2B2B2B] group-hover:bg-[#BFA2DB] text-white text-xs font-bold transition-colors">
-                        ${item.archivo ? 'Ver PDF' : 'Detalles'}
+                        Ver detalle
                     </span>
                 </div>
             `;
@@ -191,7 +180,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Control del Modal
+    // Control del Modal informativo
     function abrirModal(item) {
         document.getElementById('modal-badge').textContent = item.etiqueta;
         document.getElementById('modal-fecha').textContent = item.fecha;
@@ -201,9 +190,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('modal-horas').textContent = `${item.horas} · ${item.codigo}`;
 
         const accionDiv = document.getElementById('modal-accion');
-        if (item.archivo) {
-            accionDiv.innerHTML = `<a href="${item.archivo}" target="_blank" class="px-5 py-2.5 rounded-xl bg-[#BFA2DB] hover:bg-[#a889c7] text-white text-xs font-bold shadow-md transition-colors">Abrir Documento PDF ↗</a>`;
-        } else {
+        if (accionDiv) {
             accionDiv.innerHTML = `<span class="px-3.5 py-1.5 rounded-xl bg-emerald-50 text-emerald-700 text-xs font-bold border border-emerald-200">✓ Credencial Verificada</span>`;
         }
 
@@ -226,6 +213,5 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Renderizado inicial
     renderCards();
 });
