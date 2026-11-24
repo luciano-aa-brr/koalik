@@ -1,95 +1,231 @@
-// Listado centralizado de cursos y certificaciones
-const listadoCredenciales = [
+// Base de datos de acreditaciones y certificaciones
+// Para agregar una nueva, solo añade un objeto al arreglo manteniendo esta estructura
+const credenciales = [
+    {
+        titulo: "Programación Avanzada",
+        emisor: "Instituto Profesional Santo Tomás",
+        fecha: "17 abr 2026",
+        categoria: "Academico",
+        etiqueta: "Formación Académica",
+        horas: "270 horas pedagógicas",
+        descripcion: "Certificación académica oficial de la carrera Analista Programador. Desarrollo de software estructurado y orientado a objetos.",
+        archivo: "doc/certificadoProgramacionAvanzada.pdf",
+        codigo: "Folio 899802 · Cód: U5GTRSJO"
+    },
+    {
+        titulo: "Diseño Básico de Software",
+        emisor: "Instituto Profesional Santo Tomás",
+        fecha: "07 may 2025",
+        categoria: "Academico",
+        etiqueta: "Formación Académica",
+        horas: "162 horas pedagógicas",
+        descripcion: "Certificación académica en levantamiento de requerimientos, modelamiento y arquitectura base de sistemas.",
+        archivo: "doc/certificadoDiseñoBasicoDeSoftware.pdf",
+        codigo: "Folio 899804 · Cód: MSUE0F5G"
+    },
     {
         titulo: "Hacking Ético: de 0 a Hackear Aplicaciones",
-        entidad: "BIG school",
+        emisor: "BIG school",
         fecha: "23 oct 2026",
-        descripcion: "Jornadas intensivas de análisis de vulnerabilidades y seguridad en aplicaciones web (6 horas lectivas).",
-        categoria: "seguridad"
+        categoria: "Seguridad",
+        etiqueta: "Ciberseguridad",
+        horas: "6 horas lectivas",
+        descripcion: "Jornadas intensivas de análisis de vulnerabilidades, pruebas de penetración y seguridad en aplicaciones web.",
+        archivo: null,
+        codigo: "Validación BIG school"
     },
     {
         titulo: "Introduction to Cybersecurity",
-        entidad: "Cisco Networking Academy",
+        emisor: "Cisco Networking Academy",
         fecha: "25 jun 2024",
+        categoria: "Seguridad",
+        etiqueta: "Ciberseguridad",
+        horas: "Insignia Verificada",
         descripcion: "Fundamentos de defensa perimetral, vectores de ataque, privacidad de datos y mitigación de amenazas.",
-        categoria: "seguridad"
+        archivo: null,
+        codigo: "Cisco Verified Badge"
     },
     {
         titulo: "Networking Devices and Initial Configuration",
-        entidad: "Cisco",
+        emisor: "Cisco Networking Academy",
         fecha: "06 feb 2025",
-        descripcion: "Configuración inicial y conectividad de switches y routers.",
-        categoria: "redes"
+        categoria: "Redes",
+        etiqueta: "Redes & Infraestructura",
+        horas: "22 horas",
+        descripcion: "Configuración inicial, administración y conectividad segura de switches y routers en entornos empresariales.",
+        archivo: null,
+        codigo: "Cisco Verified Badge"
     },
     {
         titulo: "Networking Basics",
-        entidad: "Cisco",
+        emisor: "Cisco Networking Academy",
         fecha: "17 ene 2025",
-        descripcion: "Modelos OSI/TCP-IP, protocolos y direccionamiento IPv4/IPv6.",
-        categoria: "redes"
+        categoria: "Redes",
+        etiqueta: "Redes & Infraestructura",
+        horas: "22 horas",
+        descripcion: "Modelos OSI/TCP-IP, protocolos de comunicación y direccionamiento IPv4/IPv6.",
+        archivo: null,
+        codigo: "Cisco Verified Badge"
     },
     {
-        titulo: "IT Essentials",
-        entidad: "Cisco",
+        titulo: "IT Essentials: PC Hardware and Software",
+        emisor: "Cisco Networking Academy",
         fecha: "05 jul 2024",
-        descripcion: "Hardware computacional, sistemas operativos y soporte técnico.",
-        categoria: "redes"
+        categoria: "Redes",
+        etiqueta: "Redes & Infraestructura",
+        horas: "Insignia Verificada",
+        descripcion: "Hardware computacional, arquitectura de sistemas operativos, diagnóstico y soporte técnico integral.",
+        archivo: null,
+        codigo: "Cisco Verified Badge"
     },
     {
-        titulo: "AI Skills Fest 2026",
-        entidad: "Microsoft",
-        fecha: "19 jun 2026",
-        descripcion: "Fundamentos y aplicaciones prácticas de Inteligencia Artificial generativa.",
-        categoria: "desarrollo"
+        titulo: "Iniciación al Desarrollo con IA",
+        emisor: "BIG school (Brais Moure & Romuald Fons)",
+        fecha: "25 dic 2025",
+        categoria: "Desarrollo",
+        etiqueta: "Desarrollo & IA",
+        horas: "6 horas",
+        descripcion: "Integración de modelos de lenguaje e inteligencia artificial generativa en flujos de desarrollo moderno.",
+        archivo: "doc/cursoIniciacionAlDesarrolloConIA.pdf",
+        codigo: "Certificado Oficial"
     },
     {
-        titulo: "Python Essentials 1",
-        entidad: "Cisco / OpenEDG",
-        fecha: "31 may 2024",
-        descripcion: "Sintaxis elemental, estructuras de datos, control de flujo y lógica algorítmica.",
-        categoria: "desarrollo"
+        titulo: "JavaScript 1",
+        emisor: "BiblioRedes / SERPAT",
+        fecha: "14 sep 2025",
+        categoria: "Desarrollo",
+        etiqueta: "Desarrollo & IA",
+        horas: "15 horas (Nota: 6,8)",
+        descripcion: "Programación del lado del cliente, manipulación del DOM y lógica interactiva web.",
+        archivo: "doc/javaScript1.pdf",
+        codigo: "Puntaje: 96,67%"
     },
     {
-        titulo: "Python Essentials 2",
-        entidad: "Cisco / OpenEDG",
-        fecha: "10 jun 2024",
-        descripcion: "Programación orientada a objetos (POO), manejo de excepciones y módulos.",
-        categoria: "desarrollo"
+        titulo: "Fundamentos de Python 1 & 2",
+        emisor: "Cisco Networking Academy / Python Institute",
+        fecha: "Junio 2024",
+        categoria: "Desarrollo",
+        etiqueta: "Desarrollo & IA",
+        horas: "70 horas totales",
+        descripcion: "Programación procedural y orientada a objetos, estructuras de datos y desarrollo de scripts en Python.",
+        archivo: null,
+        codigo: "Python Essentials 1 & 2"
     }
 ];
 
-// Función para generar la tarjeta HTML con Tailwind CSS
-function crearTarjeta(item, indice) {
-    return `
-        <article data-aos="fade-up" data-aos-delay="${Math.min(indice * 80, 320)}" class="bg-white/70 backdrop-blur-sm p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl hover:shadow-[#BFA2DB]/10 hover:border-[#BFA2DB]/30 transition-all duration-300 flex flex-col justify-between">
-            <div>
-                <div class="flex items-center justify-between text-xs font-semibold text-[#4A444A] mb-3">
-                    <span class="bg-[#BFA2DB]/10 border border-[#BFA2DB]/10 px-2.5 py-1 rounded-full">${item.entidad}</span>
-                    <span>${item.fecha}</span>
+document.addEventListener('DOMContentLoaded', () => {
+    const grid = document.getElementById('grid-certificaciones');
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const countTodas = document.getElementById('count-todas');
+    const modal = document.getElementById('cert-modal');
+    const closeModalBtn = document.getElementById('close-modal-btn');
+
+    if (countTodas) {
+        countTodas.textContent = credenciales.length;
+    }
+
+    function renderCards(filtro = 'Todas') {
+        if (!grid) return;
+        grid.innerHTML = '';
+
+        const filtradas = filtro === 'Todas'
+            ? credenciales
+            : credenciales.filter(item => item.categoria === filtro);
+
+        if (filtradas.length === 0) {
+            grid.innerHTML = `
+                <div class="col-span-full text-center py-12 text-gray-400 text-sm font-medium">
+                    No hay certificaciones registradas en esta categoría por el momento.
                 </div>
-                <h4 class="font-bold text-[#2B2B2B] text-sm leading-snug mb-2">${item.titulo}</h4>
-                <p class="text-xs text-[#4A444A] leading-relaxed">${item.descripcion}</p>
-            </div>
-        </article>
-    `;
-}
-
-// Inyección dinámica al cargar el DOM
-document.addEventListener("DOMContentLoaded", () => {
-    const contenedorSeguridad = document.getElementById("contenedorSeguridad");
-    const contenedorRedes = document.getElementById("contenedorRedes");
-    const contenedorDesarrollo = document.getElementById("contenedorDesarrollo");
-
-    listadoCredenciales.forEach((item, indice) => {
-        const tarjetaHtml = crearTarjeta(item, indice);
-        if (item.categoria === "seguridad" && contenedorSeguridad) {
-            contenedorSeguridad.innerHTML += tarjetaHtml;
-        } else if (item.categoria === "redes" && contenedorRedes) {
-            contenedorRedes.innerHTML += tarjetaHtml;
-        } else if (item.categoria === "desarrollo" && contenedorDesarrollo) {
-            contenedorDesarrollo.innerHTML += tarjetaHtml;
+            `;
+            return;
         }
+
+        filtradas.forEach((item, index) => {
+            const card = document.createElement('div');
+            card.style.animationDelay = `${index * 50}ms`;
+            card.className = "animate-card bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl hover:border-[#BFA2DB]/40 transition-all duration-300 flex flex-col justify-between cursor-pointer group";
+
+            card.innerHTML = `
+                <div>
+                    <div class="flex items-center justify-between gap-2 mb-5">
+                        <span class="text-[10px] font-black bg-[#BFA2DB]/15 text-[#BFA2DB] px-3 py-1 rounded-full uppercase tracking-widest">
+                            ${item.emisor}
+                        </span>
+                        <span class="text-xs text-gray-400 font-bold">${item.fecha}</span>
+                    </div>
+
+                    <h3 class="text-xl font-bold text-[#2B2B2B] group-hover:text-[#BFA2DB] transition-colors mb-3 leading-snug">
+                        ${item.titulo}
+                    </h3>
+
+                    <p class="text-gray-500 text-sm leading-relaxed mb-6">
+                        ${item.descripcion}
+                    </p>
+                </div>
+
+                <div class="pt-5 border-t border-gray-50 flex items-center justify-between">
+                    <span class="text-[10px] text-gray-400 font-bold uppercase tracking-wider">${item.horas}</span>
+                    <span class="px-4 py-2 rounded-xl bg-[#2B2B2B] group-hover:bg-[#BFA2DB] text-white text-xs font-bold transition-colors">
+                        ${item.archivo ? 'Ver PDF' : 'Detalles'}
+                    </span>
+                </div>
+            `;
+
+            card.addEventListener('click', () => abrirModal(item));
+            grid.appendChild(card);
+        });
+    }
+
+    // Manejo de pestañas de filtrado
+    tabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            tabBtns.forEach(b => {
+                b.classList.remove('bg-[#2B2B2B]', 'text-white', 'shadow-md');
+                b.classList.add('bg-white', 'text-[#2B2B2B]', 'border', 'border-gray-200');
+            });
+            btn.classList.add('bg-[#2B2B2B]', 'text-white', 'shadow-md');
+            btn.classList.remove('bg-white', 'text-[#2B2B2B]', 'border', 'border-gray-200');
+
+            renderCards(btn.dataset.filter);
+        });
     });
 
-    AOS.refresh();
+    // Control del Modal
+    function abrirModal(item) {
+        document.getElementById('modal-badge').textContent = item.etiqueta;
+        document.getElementById('modal-fecha').textContent = item.fecha;
+        document.getElementById('modal-titulo').textContent = item.titulo;
+        document.getElementById('modal-emisor').textContent = item.emisor;
+        document.getElementById('modal-descripcion').textContent = item.descripcion;
+        document.getElementById('modal-horas').textContent = `${item.horas} · ${item.codigo}`;
+
+        const accionDiv = document.getElementById('modal-accion');
+        if (item.archivo) {
+            accionDiv.innerHTML = `<a href="${item.archivo}" target="_blank" class="px-5 py-2.5 rounded-xl bg-[#BFA2DB] hover:bg-[#a889c7] text-white text-xs font-bold shadow-md transition-colors">Abrir Documento PDF ↗</a>`;
+        } else {
+            accionDiv.innerHTML = `<span class="px-3.5 py-1.5 rounded-xl bg-emerald-50 text-emerald-700 text-xs font-bold border border-emerald-200">✓ Credencial Verificada</span>`;
+        }
+
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+    }
+
+    function cerrarModal() {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+    }
+
+    if (closeModalBtn) {
+        closeModalBtn.addEventListener('click', cerrarModal);
+    }
+
+    if (modal) {
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) cerrarModal();
+        });
+    }
+
+    // Renderizado inicial
+    renderCards();
 });
