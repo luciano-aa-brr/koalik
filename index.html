@@ -1,65 +1,81 @@
 <!doctype html>
 <html lang="es" class="scroll-smooth">
-
-<head>
+  <head>
     <!-- META INFORMACIÓN: Configuración básica y SEO -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
+
     <!-- TITLE Y DESCRIPCIÓN: Optimizados para SEO -->
-    <title>KoaLink | Landing Pages Profesionales para PYMES - Desarrollo Web</title>
-    <meta name="description" content="Crea tu presencia digital con KoaLink. Landing pages de alto impacto, sitios corporativos y soluciones web seguras para PYMES. Diseño responsive, SEO optimizado y soporte 24/7." />
-    <meta name="keywords" content="landing pages, diseño web, desarrollo web, PYMES, sitio web profesional, presencia digital, Chile" />
-    
+    <title>
+      KoaLink | Landing Pages Profesionales para PYMES - Desarrollo Web
+    </title>
+    <meta
+      name="description"
+      content="Crea tu presencia digital con KoaLink. Landing pages de alto impacto, sitios corporativos y soluciones web seguras para PYMES. Diseño responsive, SEO optimizado y soporte 24/7."
+    />
+    <meta
+      name="keywords"
+      content="landing pages, diseño web, desarrollo web, PYMES, sitio web profesional, presencia digital, Chile"
+    />
+
     <!-- REDES SOCIALES: Open Graph para compartir en RRSS -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="KoaLink | Landing Pages Profesionales para PYMES" />
-    <meta property="og:description" content="Soluciones web estratégicas de alto impacto diseñadas para potenciar tu presencia digital." />
+    <meta
+      property="og:title"
+      content="KoaLink | Landing Pages Profesionales para PYMES"
+    />
+    <meta
+      property="og:description"
+      content="Soluciones web estratégicas de alto impacto diseñadas para potenciar tu presencia digital."
+    />
     <meta property="og:site_name" content="KoaLink" />
     <meta name="twitter:card" content="summary_large_image" />
-    
+
     <!-- COLORES Y ICONOGRAFÍA PARA NAVEGADORES -->
     <meta name="theme-color" content="#BFA2DB" />
     <link rel="canonical" href="https://koalink.cl/" />
-    
+
     <!-- CDN Tailwind CSS: Framework CSS para diseño responsive -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <!-- Google Fonts con font-display=swap para mejor rendimiento -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
-    
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- AOS (Animate On Scroll): Librería para animar elementos al hacer scroll -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <style>
-        /* Estilos CSS personalizados e inyectados */
-        
-        /* Configurar fuente global del documento */
-        body {
-            font-family: "Inter", sans-serif;
-        }
+      /* Estilos CSS personalizados e inyectados */
 
-        /* Secciones con posicionamiento relativo para un flujo natural */
-        section,
-        header,
-        footer {
-            position: relative;
-        }
-        
-        /* OPTIMIZACIÓN DE RENDIMIENTO: Precargar imágenes críticas */
-        img {
-            loading: lazy; /* Lazy loading nativo para todas las imágenes */
-            decoding: async; /* Decodificación asincrónica para no bloquear render */
-        }
-        
-        /* OPTIMIZACIÓN: Propiedades de escritura de fuentes para mejor rendimiento */
-        body {
-            font-display: swap;
-        }
+      /* Configurar fuente global del documento */
+      body {
+        font-family: "Inter", sans-serif;
+      }
+
+      /* Secciones con posicionamiento relativo para un flujo natural */
+      section,
+      header,
+      footer {
+        position: relative;
+      }
+
+      /* OPTIMIZACIÓN DE RENDIMIENTO: Precargar imágenes críticas */
+      img {
+        loading: lazy; /* Lazy loading nativo para todas las imágenes */
+        decoding: async; /* Decodificación asincrónica para no bloquear render */
+      }
+
+      /* OPTIMIZACIÓN: Propiedades de escritura de fuentes para mejor rendimiento */
+      body {
+        font-display: swap;
+      }
     </style>
-    
+
     <!-- STRUCTURED DATA: Schema JSON-LD para mejor indexación en Google -->
     <script type="application/ld+json">
-    {
+      {
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
         "name": "KoaLink",
@@ -68,553 +84,858 @@
         "telephone": "+56966888378",
         "email": "contacto@koalink.cl",
         "areaServed": {
-            "@type": "Country",
-            "name": "CL"
+          "@type": "Country",
+          "name": "CL"
         },
         "priceRange": "$$",
-        "serviceType": ["Landing Pages", "Sitios Web", "One Page", "Páginas Corporativas"]
-    }
+        "serviceType": [
+          "Landing Pages",
+          "Sitios Web",
+          "One Page",
+          "Páginas Corporativas"
+        ]
+      }
     </script>
     <!-- Nota: Resumen breve: Landing estática optimizada para SEO y rendimiento; chatbot local añadido. -->
-</head>
+  </head>
 
-<!-- CUERPO DEL DOCUMENTO: Fondo degradado radial, tema de colores y overflow controlado -->
-<!-- Nota: scroll-smooth se aplica en HTML tag para mejor rendimiento -->
-<body
-    class="bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-gray-50 via-white to-[#BFA2DB]/20 text-[#2B2B2B] overflow-x-hidden">
+  <!-- CUERPO DEL DOCUMENTO: Fondo degradado radial, tema de colores y overflow controlado -->
+  <!-- Nota: scroll-smooth se aplica en HTML tag para mejor rendimiento -->
+  <body
+    class="bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-gray-50 via-white to-[#BFA2DB]/20 text-[#2B2B2B] overflow-x-hidden"
+  >
     <!-- NAVEGACIÓN PRINCIPAL: Navbar fijo con blur effect y efecto de scroll dinámico -->
     <!-- El JavaScript agrega bg-white/90 y shadow-md cuando scrollY > 50px -->
-    <nav class="fixed w-full bg-white/80 backdrop-blur-md z-50 border-b border-gray-100/50">
-        <div class="max-w-7xl mx-auto px-4 h-20 flex justify-between items-center">
-            <div class="flex items-center gap-2">
-                <div
-                    class="w-10 h-10 bg-[#BFA2DB] rounded-lg flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-[#BFA2DB]/20">
-                    K
-                </div>
-                <span class="text-2xl font-bold text-[#2B2B2B] tracking-tight">KoaLink</span>
-            </div>
+    <nav
+      class="fixed w-full bg-white/80 backdrop-blur-md z-50 border-b border-gray-100/50"
+    >
+      <div
+        class="max-w-7xl mx-auto px-4 h-20 flex justify-between items-center"
+      >
+        <div class="flex items-center gap-2">
+          <div>
+            <img
+              src="/img/logo.jpeg"
+              alt="Logo KoaLink"
+              class="w-14 h-14 object-contain rounded-full"
+            />
+          </div>
 
-            <div class="hidden md:flex items-center gap-8 font-medium">
-                <a href="#servicios" class="hover:text-[#BFA2DB] transition font-bold text-sm">Servicios</a>
-                <a href="#proyectos" class="hover:text-[#BFA2DB] transition font-bold text-sm">Proyectos</a>
-                <a href="#faq" class="hover:text-[#BFA2DB] transition font-bold text-sm">FAQ</a>
-                <a href="/portafolio"
-                    class="hover:text-[#BFA2DB] transition font-bold text-sm">Portafolio</a>
-                <a href="https://wa.me/56966888378" target="_blank"
-                    class="bg-[#BFA2DB] text-white px-6 py-2 rounded-full hover:shadow-xl transition-all text-sm font-bold">WhatsApp</a>
-            </div>
+          <span class="text-2xl font-bold text-[#2B2B2B] tracking-tight"
+            >KoaLink</span
+          >
         </div>
+
+        <div class="hidden md:flex items-center gap-8 font-medium">
+          <a
+            href="#servicios"
+            class="hover:text-[#BFA2DB] transition font-bold text-sm"
+            >Servicios</a
+          >
+          <a
+            href="#proyectos"
+            class="hover:text-[#BFA2DB] transition font-bold text-sm"
+            >Proyectos</a
+          >
+          <a
+            href="#faq"
+            class="hover:text-[#BFA2DB] transition font-bold text-sm"
+            >FAQ</a
+          >
+          <a
+            href="/portafolio"
+            class="hover:text-[#BFA2DB] transition font-bold text-sm"
+            >Portafolio</a
+          >
+          <a
+            href="https://wa.me/56966888378"
+            target="_blank"
+            class="bg-[#BFA2DB] text-white px-6 py-2 rounded-full hover:shadow-xl transition-all text-sm font-bold"
+            >WhatsApp</a
+          >
+        </div>
+      </div>
     </nav>
 
     <!-- SECCIÓN HERO/HEADER: Presentación principal con animaciones AOS -->
     <!-- data-aos="fade-down" y data-aos-delay para animaciones de scroll -->
-    <header class="min-h-screen flex flex-col justify-center items-center pt-32 pb-20 px-6 text-center">
-        <h1 data-aos="fade-down" class="text-5xl md:text-7xl font-black mb-6 text-[#2B2B2B] leading-tight">
-            Impulsa tu PYME con <br /><span class="text-[#BFA2DB]">KoaLink</span>
-        </h1>
-        <p data-aos="fade-up" data-aos-delay="200"
-            class="text-xl text-[#4A444A] max-w-2xl mx-auto mb-10 leading-relaxed">
-            Páginas de alto impacto para potenciar tu presencia digital y ventas con
-            tecnología de última generación.
-        </p>
-        <div data-aos="fade-up" data-aos-delay="400" class="flex flex-col md:flex-row justify-center gap-4">
-            <a href="https://wa.me/569" target="_blank"
-                class="bg-[#BFA2DB] text-white px-10 py-4 rounded-2xl font-bold shadow-xl shadow-[#BFA2DB]/30 hover:scale-105 transition transform text-center">Contactar
-                ahora</a>
-            <a href="/portafolio"
-                class="bg-white/50 backdrop-blur-sm text-[#2B2B2B] px-10 py-4 rounded-2xl font-bold shadow-sm border border-gray-200 hover:scale-105 transition transform text-center">Ver
-                Portafolio</a>
-        </div>
+    <header
+      class="min-h-screen flex flex-col justify-center items-center pt-32 pb-20 px-6 text-center"
+    >
+      <h1
+        data-aos="fade-down"
+        class="text-5xl md:text-7xl font-black mb-6 text-[#2B2B2B] leading-tight"
+      >
+        Impulsa tu PYME con <br /><span class="text-[#BFA2DB]">KoaLink</span>
+      </h1>
+      <p
+        data-aos="fade-up"
+        data-aos-delay="200"
+        class="text-xl text-[#4A444A] max-w-2xl mx-auto mb-10 leading-relaxed"
+      >
+        Páginas de alto impacto para potenciar tu presencia digital y ventas con
+        tecnología de última generación.
+      </p>
+      <div
+        data-aos="fade-up"
+        data-aos-delay="400"
+        class="flex flex-col md:flex-row justify-center gap-4"
+      >
+        <a
+          href="https://wa.me/569"
+          target="_blank"
+          class="bg-[#BFA2DB] text-white px-10 py-4 rounded-2xl font-bold shadow-xl shadow-[#BFA2DB]/30 hover:scale-105 transition transform text-center"
+          >Contactar ahora</a
+        >
+        <a
+          href="/portafolio"
+          class="bg-white/50 backdrop-blur-sm text-[#2B2B2B] px-10 py-4 rounded-2xl font-bold shadow-sm border border-gray-200 hover:scale-105 transition transform text-center"
+          >Ver Portafolio</a
+        >
+      </div>
     </header>
 
     <!-- SECCIÓN SERVICIOS: Grid responsive (1 col mobile, 4 col desktop) con tarjetas de servicios -->
     <!-- Incluye 4 planes diferentes optimizados para SEO -->
     <section id="servicios" class="py-24 px-6 bg-white">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-20">
-                <h2 class="text-3xl md:text-4xl font-black text-[#2B2B2B] tracking-tight mb-4">Nuestras Soluciones
-                    Digitales</h2>
-                <p class="text-gray-500 font-medium max-w-2xl mx-auto">Desarrollo web estratégico diseñado para
-                    potenciar tu presencia en línea con entregas rápidas y resultados profesionales.</p>
-                <div class="w-20 h-1.5 bg-[#BFA2DB] mx-auto mt-6 rounded-full"></div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-
-                <div
-                    class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl hover:border-[#BFA2DB]/30 transition-all duration-300 flex flex-col justify-between">
-                    <div>
-                        <div class="w-12 h-12 bg-[#BFA2DB]/10 rounded-2xl flex items-center justify-center mb-6">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="#BFA2DB" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
-                                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
-                            </svg>
-                        </div>
-                        <h3 class="text-xl font-bold text-[#2B2B2B] mb-2">KoaLink Creator</h3>
-                        <p class="text-[#BFA2DB] font-bold text-xs uppercase tracking-wider mb-4">Digitalización Rápida
-                        </p>
-                        <p class="text-gray-500 text-sm mb-6">Ideal para perfiles personales y redes sociales.</p>
-                        <ul class="space-y-3 mb-8">
-                            <li class="flex items-center gap-2 text-sm text-gray-600"><span
-                                    class="text-[#BFA2DB]">●</span> 1 URL única</li>
-                            <li class="flex items-center gap-2 text-sm text-gray-600"><span
-                                    class="text-[#BFA2DB]">●</span> 10 botones de enlace</li>
-                            <li class="flex items-center gap-2 text-sm text-gray-600"><span
-                                    class="text-[#BFA2DB]">●</span> WhatsApp Directo</li>
-                            <li class="flex items-center gap-2 text-sm text-gray-600"><span
-                                    class="text-[#BFA2DB]">●</span> Galería (3 fotos)</li>
-                        </ul>
-                    </div>
-                    <div class="pt-6 border-t border-gray-50">
-                        <p class="text-[10px] text-gray-400 font-bold uppercase mb-4">Entrega: 72 Horas</p>
-                        <a href="https://wa.me/56966888378"
-                            class="block text-center py-3 rounded-xl bg-[#2B2B2B] text-white text-xs font-bold hover:bg-[#BFA2DB] transition-colors">Solicitar</a>
-                    </div>
-                </div>
-
-                <div
-                    class="bg-white p-8 rounded-3xl border-2 border-[#BFA2DB] shadow-xl shadow-[#BFA2DB]/5 flex flex-col justify-between relative overflow-hidden">
-                    <div
-                        class="absolute top-0 right-0 bg-[#BFA2DB] text-white text-[9px] font-black px-4 py-1 rounded-bl-xl uppercase tracking-widest">
-                        Popular</div>
-                    <div>
-                        <div class="w-12 h-12 bg-[#BFA2DB]/10 rounded-2xl flex items-center justify-center mb-6">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="#BFA2DB" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <rect width="18" height="18" x="3" y="3" rx="2" />
-                                <path d="M3 9h18" />
-                            </svg>
-                        </div>
-                        <h3 class="text-xl font-bold text-[#2B2B2B] mb-2">Landing Page</h3>
-                        <p class="text-[#BFA2DB] font-bold text-xs uppercase tracking-wider mb-4">Alta Conversión</p>
-                        <p class="text-gray-500 text-sm mb-6">Enfocada en convertir visitas en clientes.</p>
-                        <ul class="space-y-3 mb-8">
-                            <li class="flex items-center gap-2 text-sm text-gray-600"><span
-                                    class="text-[#BFA2DB]">●</span> Hero Section</li>
-                            <li class="flex items-center gap-2 text-sm text-gray-600"><span
-                                    class="text-[#BFA2DB]">●</span> 5 Beneficios clave</li>
-                            <li class="flex items-center gap-2 text-sm text-gray-600"><span
-                                    class="text-[#BFA2DB]">●</span> Formulario de contacto</li>
-                            <li class="flex items-center gap-2 text-sm text-gray-600"><span
-                                    class="text-[#BFA2DB]">●</span> CTA Persistente</li>
-                        </ul>
-                    </div>
-                    <div class="pt-6 border-t border-gray-50">
-                        <p class="text-[10px] text-[#BFA2DB] font-bold uppercase mb-4">Optimizado para Ventas</p>
-                        <a href="https://wa.me/56966888378"
-                            class="block text-center py-3 rounded-xl bg-[#BFA2DB] text-white text-xs font-bold hover:shadow-lg transition-all">Solicitar</a>
-                    </div>
-                </div>
-
-                <div
-                    class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl hover:border-[#BFA2DB]/30 transition-all duration-300 flex flex-col justify-between">
-                    <div>
-                        <div class="w-12 h-12 bg-[#BFA2DB]/10 rounded-2xl flex items-center justify-center mb-6">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="#BFA2DB" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z" />
-                                <line x1="4" x2="4" y1="22" y2="15" />
-                            </svg>
-                        </div>
-                        <h3 class="text-xl font-bold text-[#2B2B2B] mb-2">One Page</h3>
-                        <p class="text-[#BFA2DB] font-bold text-xs uppercase tracking-wider mb-4">Especial PYMES</p>
-                        <p class="text-gray-500 text-sm mb-6">Toda tu información en una sola navegación.</p>
-                        <ul class="space-y-3 mb-8">
-                            <li class="flex items-center gap-2 text-sm text-gray-600"><span
-                                    class="text-[#BFA2DB]">●</span> Hasta 5 secciones</li>
-                            <li class="flex items-center gap-2 text-sm text-gray-600"><span
-                                    class="text-[#BFA2DB]">●</span> Galería (12 fotos)</li>
-                            <li class="flex items-center gap-2 text-sm text-gray-600"><span
-                                    class="text-[#BFA2DB]">●</span> Google Maps integrado</li>
-                            <li class="flex items-center gap-2 text-sm text-gray-600"><span
-                                    class="text-[#BFA2DB]">●</span> Navegación por anclas</li>
-                        </ul>
-                    </div>
-                    <div class="pt-6 border-t border-gray-50">
-                        <p class="text-[10px] text-gray-400 font-bold uppercase mb-4">Presencia Completa</p>
-                        <a href="https://wa.me/56966888378"
-                            class="block text-center py-3 rounded-xl bg-[#2B2B2B] text-white text-xs font-bold hover:bg-[#BFA2DB] transition-colors">Solicitar</a>
-                    </div>
-                </div>
-
-                <div
-                    class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl hover:border-[#BFA2DB]/30 transition-all duration-300 flex flex-col justify-between">
-                    <div>
-                        <div class="w-12 h-12 bg-[#BFA2DB]/10 rounded-2xl flex items-center justify-center mb-6">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="#BFA2DB" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <path
-                                    d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2" />
-                                <path d="M18 14h-8" />
-                                <path d="M15 18h-5" />
-                                <path d="M10 6h8v4h-8V6Z" />
-                            </svg>
-                        </div>
-                        <h3 class="text-xl font-bold text-[#2B2B2B] mb-2">Corporativa</h3>
-                        <p class="text-[#BFA2DB] font-bold text-xs uppercase tracking-wider mb-4">Sitio Multi-página</p>
-                        <p class="text-gray-500 text-sm mb-6">Estructura avanzada para empresas sólidas.</p>
-                        <ul class="space-y-3 mb-8">
-                            <li class="flex items-center gap-2 text-sm text-gray-600"><span
-                                    class="text-[#BFA2DB]">●</span> Hasta 5 páginas internas</li>
-                            <li class="flex items-center gap-2 text-sm text-gray-600"><span
-                                    class="text-[#BFA2DB]">●</span> Menú desplegable</li>
-                            <li class="flex items-center gap-2 text-sm text-gray-600"><span
-                                    class="text-[#BFA2DB]">●</span> SEO por página</li>
-                            <li class="flex items-center gap-2 text-sm text-gray-600"><span
-                                    class="text-[#BFA2DB]">●</span> Formulario avanzado</li>
-                        </ul>
-                    </div>
-                    <div class="pt-6 border-t border-gray-50">
-                        <p class="text-[10px] text-gray-400 font-bold uppercase mb-4">Escalabilidad Total</p>
-                        <a href="https://wa.me/56966888378"
-                            class="block text-center py-3 rounded-xl bg-[#2B2B2B] text-white text-xs font-bold hover:bg-[#BFA2DB] transition-colors">Solicitar</a>
-                    </div>
-                </div>
-
-            </div>
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-20">
+          <h2
+            class="text-3xl md:text-4xl font-black text-[#2B2B2B] tracking-tight mb-4"
+          >
+            Nuestras Soluciones Digitales
+          </h2>
+          <p class="text-gray-500 font-medium max-w-2xl mx-auto">
+            Desarrollo web estratégico diseñado para potenciar tu presencia en
+            línea con entregas rápidas y resultados profesionales.
+          </p>
+          <div class="w-20 h-1.5 bg-[#BFA2DB] mx-auto mt-6 rounded-full"></div>
         </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div
+            class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl hover:border-[#BFA2DB]/30 transition-all duration-300 flex flex-col justify-between"
+          >
+            <div>
+              <div
+                class="w-12 h-12 bg-[#BFA2DB]/10 rounded-2xl flex items-center justify-center mb-6"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#BFA2DB"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"
+                  />
+                  <path
+                    d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"
+                  />
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-[#2B2B2B] mb-2">
+                KoaLink Creator
+              </h3>
+              <p
+                class="text-[#BFA2DB] font-bold text-xs uppercase tracking-wider mb-4"
+              >
+                Digitalización Rápida
+              </p>
+              <p class="text-gray-500 text-sm mb-6">
+                Ideal para perfiles personales y redes sociales.
+              </p>
+              <ul class="space-y-3 mb-8">
+                <li class="flex items-center gap-2 text-sm text-gray-600">
+                  <span class="text-[#BFA2DB]">●</span> 1 URL única
+                </li>
+                <li class="flex items-center gap-2 text-sm text-gray-600">
+                  <span class="text-[#BFA2DB]">●</span> 10 botones de enlace
+                </li>
+                <li class="flex items-center gap-2 text-sm text-gray-600">
+                  <span class="text-[#BFA2DB]">●</span> WhatsApp Directo
+                </li>
+                <li class="flex items-center gap-2 text-sm text-gray-600">
+                  <span class="text-[#BFA2DB]">●</span> Galería (3 fotos)
+                </li>
+              </ul>
+            </div>
+            <div class="pt-6 border-t border-gray-50">
+              <p class="text-[10px] text-gray-400 font-bold uppercase mb-4">
+                Entrega: 72 Horas
+              </p>
+              <a
+                href="https://wa.me/56966888378"
+                class="block text-center py-3 rounded-xl bg-[#2B2B2B] text-white text-xs font-bold hover:bg-[#BFA2DB] transition-colors"
+                >Solicitar</a
+              >
+            </div>
+          </div>
+
+          <div
+            class="bg-white p-8 rounded-3xl border-2 border-[#BFA2DB] shadow-xl shadow-[#BFA2DB]/5 flex flex-col justify-between relative overflow-hidden"
+          >
+            <div
+              class="absolute top-0 right-0 bg-[#BFA2DB] text-white text-[9px] font-black px-4 py-1 rounded-bl-xl uppercase tracking-widest"
+            >
+              Popular
+            </div>
+            <div>
+              <div
+                class="w-12 h-12 bg-[#BFA2DB]/10 rounded-2xl flex items-center justify-center mb-6"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#BFA2DB"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <rect width="18" height="18" x="3" y="3" rx="2" />
+                  <path d="M3 9h18" />
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-[#2B2B2B] mb-2">
+                Landing Page
+              </h3>
+              <p
+                class="text-[#BFA2DB] font-bold text-xs uppercase tracking-wider mb-4"
+              >
+                Alta Conversión
+              </p>
+              <p class="text-gray-500 text-sm mb-6">
+                Enfocada en convertir visitas en clientes.
+              </p>
+              <ul class="space-y-3 mb-8">
+                <li class="flex items-center gap-2 text-sm text-gray-600">
+                  <span class="text-[#BFA2DB]">●</span> Hero Section
+                </li>
+                <li class="flex items-center gap-2 text-sm text-gray-600">
+                  <span class="text-[#BFA2DB]">●</span> 5 Beneficios clave
+                </li>
+                <li class="flex items-center gap-2 text-sm text-gray-600">
+                  <span class="text-[#BFA2DB]">●</span> Formulario de contacto
+                </li>
+                <li class="flex items-center gap-2 text-sm text-gray-600">
+                  <span class="text-[#BFA2DB]">●</span> CTA Persistente
+                </li>
+              </ul>
+            </div>
+            <div class="pt-6 border-t border-gray-50">
+              <p class="text-[10px] text-[#BFA2DB] font-bold uppercase mb-4">
+                Optimizado para Ventas
+              </p>
+              <a
+                href="https://wa.me/56966888378"
+                class="block text-center py-3 rounded-xl bg-[#BFA2DB] text-white text-xs font-bold hover:shadow-lg transition-all"
+                >Solicitar</a
+              >
+            </div>
+          </div>
+
+          <div
+            class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl hover:border-[#BFA2DB]/30 transition-all duration-300 flex flex-col justify-between"
+          >
+            <div>
+              <div
+                class="w-12 h-12 bg-[#BFA2DB]/10 rounded-2xl flex items-center justify-center mb-6"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#BFA2DB"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"
+                  />
+                  <line x1="4" x2="4" y1="22" y2="15" />
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-[#2B2B2B] mb-2">One Page</h3>
+              <p
+                class="text-[#BFA2DB] font-bold text-xs uppercase tracking-wider mb-4"
+              >
+                Especial PYMES
+              </p>
+              <p class="text-gray-500 text-sm mb-6">
+                Toda tu información en una sola navegación.
+              </p>
+              <ul class="space-y-3 mb-8">
+                <li class="flex items-center gap-2 text-sm text-gray-600">
+                  <span class="text-[#BFA2DB]">●</span> Hasta 5 secciones
+                </li>
+                <li class="flex items-center gap-2 text-sm text-gray-600">
+                  <span class="text-[#BFA2DB]">●</span> Galería (12 fotos)
+                </li>
+                <li class="flex items-center gap-2 text-sm text-gray-600">
+                  <span class="text-[#BFA2DB]">●</span> Google Maps integrado
+                </li>
+                <li class="flex items-center gap-2 text-sm text-gray-600">
+                  <span class="text-[#BFA2DB]">●</span> Navegación por anclas
+                </li>
+              </ul>
+            </div>
+            <div class="pt-6 border-t border-gray-50">
+              <p class="text-[10px] text-gray-400 font-bold uppercase mb-4">
+                Presencia Completa
+              </p>
+              <a
+                href="https://wa.me/56966888378"
+                class="block text-center py-3 rounded-xl bg-[#2B2B2B] text-white text-xs font-bold hover:bg-[#BFA2DB] transition-colors"
+                >Solicitar</a
+              >
+            </div>
+          </div>
+
+          <div
+            class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl hover:border-[#BFA2DB]/30 transition-all duration-300 flex flex-col justify-between"
+          >
+            <div>
+              <div
+                class="w-12 h-12 bg-[#BFA2DB]/10 rounded-2xl flex items-center justify-center mb-6"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#BFA2DB"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"
+                  />
+                  <path d="M18 14h-8" />
+                  <path d="M15 18h-5" />
+                  <path d="M10 6h8v4h-8V6Z" />
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-[#2B2B2B] mb-2">Corporativa</h3>
+              <p
+                class="text-[#BFA2DB] font-bold text-xs uppercase tracking-wider mb-4"
+              >
+                Sitio Multi-página
+              </p>
+              <p class="text-gray-500 text-sm mb-6">
+                Estructura avanzada para empresas sólidas.
+              </p>
+              <ul class="space-y-3 mb-8">
+                <li class="flex items-center gap-2 text-sm text-gray-600">
+                  <span class="text-[#BFA2DB]">●</span> Hasta 5 páginas internas
+                </li>
+                <li class="flex items-center gap-2 text-sm text-gray-600">
+                  <span class="text-[#BFA2DB]">●</span> Menú desplegable
+                </li>
+                <li class="flex items-center gap-2 text-sm text-gray-600">
+                  <span class="text-[#BFA2DB]">●</span> SEO por página
+                </li>
+                <li class="flex items-center gap-2 text-sm text-gray-600">
+                  <span class="text-[#BFA2DB]">●</span> Formulario avanzado
+                </li>
+              </ul>
+            </div>
+            <div class="pt-6 border-t border-gray-50">
+              <p class="text-[10px] text-gray-400 font-bold uppercase mb-4">
+                Escalabilidad Total
+              </p>
+              <a
+                href="https://wa.me/56966888378"
+                class="block text-center py-3 rounded-xl bg-[#2B2B2B] text-white text-xs font-bold hover:bg-[#BFA2DB] transition-colors"
+                >Solicitar</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- SECCIÓN PROYECTOS: Showcase de casos de éxito con proyectos reales -->
     <!-- Imágenes con lazy loading y alt text SEO optimizado -->
-    <section id="proyectos" class="min-h-screen flex flex-col justify-center py-24">
-        <div class="max-w-6xl mx-auto px-6 w-full">
-            <div data-aos="fade-up" class="text-center mb-16">
-                <h2 class="text-4xl font-black text-[#2B2B2B]">Casos de Éxito</h2>
-                <p class="text-[#BFA2DB] font-bold mt-2 uppercase tracking-widest text-sm">Proyectos reales con sello
-                    KoaLink</p>
-                <div class="w-16 h-1 bg-[#BFA2DB] mx-auto mt-4 rounded-full"></div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-
-                <a href="https://lilstuart.vercel.app/" target="_blank" data-aos="fade-right"
-                    class="group relative bg-white/40 backdrop-blur-xl rounded-[2.5rem] border border-white p-4 transition-all hover:shadow-2xl hover:shadow-[#BFA2DB]/20 block">
-                    <div class="overflow-hidden rounded-[2rem] h-64 md:h-80 bg-gray-100 relative">
-                    <img src="./img/lilstuartView.png" alt="Lil Stuart - Página de perfil de artista musical diseñada por KoaLink"
-                        class="w-full h-full object-cover group-hover:scale-105 transition duration-700"
-                        loading="lazy"
-                            onerror="this.src='https://via.placeholder.com/600x400?text=Lil+Stuart+Creator+Page'">
-                        <div
-                            class="absolute inset-0 bg-gradient-to-t from-[#BFA2DB]/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                        </div>
-                        <div
-                            class="absolute bottom-6 right-6 bg-white p-3 rounded-full shadow-lg transform translate-y-12 group-hover:translate-y-0 transition-transform duration-500">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                fill="none" stroke="#BFA2DB" stroke-width="3" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <path d="M7 7h10v10" />
-                                <path d="M7 17 17 7" />
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="p-8">
-                        <span
-                            class="text-[10px] font-black bg-[#BFA2DB]/20 text-[#BFA2DB] px-3 py-1 rounded-full uppercase tracking-widest">Plan
-                            Creator</span>
-                        <h3 class="text-2xl font-black text-[#2B2B2B] mt-4 mb-3 group-hover:text-[#BFA2DB] transition">
-                            Lil Stuart</h3>
-                        <p class="text-sm text-[#4A444A] leading-relaxed">
-                            Landing page personalizada para artista musical. Optimización de enlaces de streaming,
-                            integración de redes sociales y diseño enfocado en la identidad visual del creador.
-                        </p>
-                    </div>
-                </a>
-
-                <a href="https://www.escuelaaraucania.cl/" target="_blank" data-aos="fade-left"
-                    class="group relative bg-white/40 backdrop-blur-xl rounded-[2.5rem] border border-white p-4 transition-all hover:shadow-2xl hover:shadow-[#BFA2DB]/20 block">
-                    <div class="overflow-hidden rounded-[2rem] h-64 md:h-80 bg-gray-100 relative">
-                    <img src="./img/escuelaView.png" alt="Institución Educacional - Sitio web informativo escolar diseñado por KoaLink"
-                        class="w-full h-full object-cover group-hover:scale-105 transition duration-700"
-                        loading="lazy"
-                            onerror="this.src='https://via.placeholder.com/600x400?text=Proyecto+Escuela+Digital'">
-                        <div
-                            class="absolute inset-0 bg-gradient-to-t from-[#BFA2DB]/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                        </div>
-                        <div
-                            class="absolute bottom-6 right-6 bg-white p-3 rounded-full shadow-lg transform translate-y-12 group-hover:translate-y-0 transition-transform duration-500">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                fill="none" stroke="#BFA2DB" stroke-width="3" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <path d="M7 7h10v10" />
-                                <path d="M7 17 17 7" />
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="p-8">
-                        <span
-                            class="text-[10px] font-black bg-[#2B2B2B] text-white px-3 py-1 rounded-full uppercase tracking-widest">One
-                            Page</span>
-                        <h3 class="text-2xl font-black text-[#2B2B2B] mt-4 mb-3 group-hover:text-[#BFA2DB] transition">
-                            Institución Educacional</h3>
-                        <p class="text-sm text-[#4A444A] leading-relaxed">
-                            Plataforma institucional para la gestión de información y comunicación con la comunidad
-                            escolar. Enfocada en la accesibilidad, seguridad de datos y rendimiento óptimo.
-                        </p>
-                    </div>
-                </a>
-
-            </div>
+    <section
+      id="proyectos"
+      class="min-h-screen flex flex-col justify-center py-24"
+    >
+      <div class="max-w-6xl mx-auto px-6 w-full">
+        <div data-aos="fade-up" class="text-center mb-16">
+          <h2 class="text-4xl font-black text-[#2B2B2B]">Casos de Éxito</h2>
+          <p
+            class="text-[#BFA2DB] font-bold mt-2 uppercase tracking-widest text-sm"
+          >
+            Proyectos reales con sello KoaLink
+          </p>
+          <div class="w-16 h-1 bg-[#BFA2DB] mx-auto mt-4 rounded-full"></div>
         </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+          <a
+            href="https://lilstuart.vercel.app/"
+            target="_blank"
+            data-aos="fade-right"
+            class="group relative bg-white/40 backdrop-blur-xl rounded-[2.5rem] border border-white p-4 transition-all hover:shadow-2xl hover:shadow-[#BFA2DB]/20 block"
+          >
+            <div
+              class="overflow-hidden rounded-[2rem] h-64 md:h-80 bg-gray-100 relative"
+            >
+              <img
+                src="./img/lilstuartView.png"
+                alt="Lil Stuart - Página de perfil de artista musical diseñada por KoaLink"
+                class="w-full h-full object-cover group-hover:scale-105 transition duration-700"
+                loading="lazy"
+                onerror="
+                  this.src =
+                    'https://via.placeholder.com/600x400?text=Lil+Stuart+Creator+Page'
+                "
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-[#BFA2DB]/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+              ></div>
+              <div
+                class="absolute bottom-6 right-6 bg-white p-3 rounded-full shadow-lg transform translate-y-12 group-hover:translate-y-0 transition-transform duration-500"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#BFA2DB"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M7 7h10v10" />
+                  <path d="M7 17 17 7" />
+                </svg>
+              </div>
+            </div>
+            <div class="p-8">
+              <span
+                class="text-[10px] font-black bg-[#BFA2DB]/20 text-[#BFA2DB] px-3 py-1 rounded-full uppercase tracking-widest"
+                >Plan Creator</span
+              >
+              <h3
+                class="text-2xl font-black text-[#2B2B2B] mt-4 mb-3 group-hover:text-[#BFA2DB] transition"
+              >
+                Lil Stuart
+              </h3>
+              <p class="text-sm text-[#4A444A] leading-relaxed">
+                Landing page personalizada para artista musical. Optimización de
+                enlaces de streaming, integración de redes sociales y diseño
+                enfocado en la identidad visual del creador.
+              </p>
+            </div>
+          </a>
+
+          <a
+            href="https://www.escuelaaraucania.cl/"
+            target="_blank"
+            data-aos="fade-left"
+            class="group relative bg-white/40 backdrop-blur-xl rounded-[2.5rem] border border-white p-4 transition-all hover:shadow-2xl hover:shadow-[#BFA2DB]/20 block"
+          >
+            <div
+              class="overflow-hidden rounded-[2rem] h-64 md:h-80 bg-gray-100 relative"
+            >
+              <img
+                src="./img/escuelaView.png"
+                alt="Institución Educacional - Sitio web informativo escolar diseñado por KoaLink"
+                class="w-full h-full object-cover group-hover:scale-105 transition duration-700"
+                loading="lazy"
+                onerror="
+                  this.src =
+                    'https://via.placeholder.com/600x400?text=Proyecto+Escuela+Digital'
+                "
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-[#BFA2DB]/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+              ></div>
+              <div
+                class="absolute bottom-6 right-6 bg-white p-3 rounded-full shadow-lg transform translate-y-12 group-hover:translate-y-0 transition-transform duration-500"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#BFA2DB"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M7 7h10v10" />
+                  <path d="M7 17 17 7" />
+                </svg>
+              </div>
+            </div>
+            <div class="p-8">
+              <span
+                class="text-[10px] font-black bg-[#2B2B2B] text-white px-3 py-1 rounded-full uppercase tracking-widest"
+                >One Page</span
+              >
+              <h3
+                class="text-2xl font-black text-[#2B2B2B] mt-4 mb-3 group-hover:text-[#BFA2DB] transition"
+              >
+                Institución Educacional
+              </h3>
+              <p class="text-sm text-[#4A444A] leading-relaxed">
+                Plataforma institucional para la gestión de información y
+                comunicación con la comunidad escolar. Enfocada en la
+                accesibilidad, seguridad de datos y rendimiento óptimo.
+              </p>
+            </div>
+          </a>
+        </div>
+      </div>
     </section>
 
     <!-- SECCIÓN FAQ: Preguntas frecuentes con elementos <details> interactivos -->
     <!-- Facilita reducción de bounce rate y mejora UX -->
     <section id="faq" class="min-h-screen flex flex-col justify-center py-24">
-        <div class="max-w-5xl mx-auto px-6 w-full">
-            <div data-aos="fade-up" class="text-center mb-16">
-                <h2 class="text-4xl font-black text-[#2B2B2B]">
-                    Preguntas Frecuentes
-                </h2>
-                <p class="text-[#BFA2DB] font-bold mt-2 uppercase tracking-widest text-sm">
-                    Todo lo que necesitas saber sobre KoaLink
-                </p>
-                <div class="w-16 h-1 bg-[#BFA2DB] mx-auto mt-4 rounded-full"></div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
-                <div class="space-y-4" data-aos="fade-right">
-                    <h3 class="text-xs font-black uppercase tracking-[0.2em] text-gray-400 mb-6 pl-2">
-                        Servicios y Planes
-                    </h3>
-
-                    <details
-                        class="group bg-white/50 backdrop-blur-sm rounded-2xl border border-gray-100 p-6 shadow-sm">
-                        <summary
-                            class="flex justify-between items-center font-bold cursor-pointer list-none text-[#2B2B2B] hover:text-[#BFA2DB] transition">
-                            ¿Qué incluye exactamente una Landing Page?
-                            <span class="transition group-open:rotate-180"><svg fill="none" height="20"
-                                    stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="20">
-                                    <path d="M6 9l6 6 6-6"></path>
-                                </svg></span>
-                        </summary>
-                        <p class="text-[#4A444A] mt-4 text-sm leading-relaxed">
-                            Es una página única de alto impacto diseñada para convertir
-                            visitas en ventas. Incluye diseño responsive, botones directos
-                            a WhatsApp, formularios de contacto, integración de Google Maps
-                            y optimización de velocidad de carga.
-                        </p>
-                    </details>
-
-                    <details
-                        class="group bg-white/50 backdrop-blur-sm rounded-2xl border border-gray-100 p-6 shadow-sm">
-                        <summary
-                            class="flex justify-between items-center font-bold cursor-pointer list-none text-[#2B2B2B] hover:text-[#BFA2DB] transition">
-                            ¿Cómo funciona el Plan Creator?
-                            <span class="transition group-open:rotate-180"><svg fill="none" height="20"
-                                    stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="20">
-                                    <path d="M6 9l6 6 6-6"></path>
-                                </svg></span>
-                        </summary>
-                        <p class="text-[#4A444A] mt-4 text-sm leading-relaxed">
-                            Es la evolución del "link en bio". Creamos un sitio web oficial
-                            para creadores de contenido que centraliza redes sociales,
-                            suscripciones y portafolio, con un diseño
-                            premium que evita bloqueos de Instagram o TikTok.
-                        </p>
-                    </details>
-
-                    <details
-                        class="group bg-white/50 backdrop-blur-sm rounded-2xl border border-gray-100 p-6 shadow-sm">
-                        <summary
-                            class="flex justify-between items-center font-bold cursor-pointer list-none text-[#2B2B2B] hover:text-[#BFA2DB] transition">
-                            ¿Qué secciones tiene una Página Informativa?
-                            <span class="transition group-open:rotate-180"><svg fill="none" height="20"
-                                    stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="20">
-                                    <path d="M6 9l6 6 6-6"></path>
-                                </svg></span>
-                        </summary>
-                        <p class="text-[#4A444A] mt-4 text-sm leading-relaxed">
-                            Es un sitio web corporativo completo. Generalmente incluye:
-                            Inicio, Nosotros, Servicios/Productos, Portafolio o Galería,
-                            Preguntas Frecuentes y Contacto. Ideal para empresas que
-                            buscan proyectar seriedad y confianza.
-                        </p>
-                    </details>
-                </div>
-
-                <div class="space-y-4" data-aos="fade-left">
-                    <h3 class="text-xs font-black uppercase tracking-[0.2em] text-gray-400 mb-6 pl-2">
-                        Pagos y Condiciones
-                    </h3>
-
-                    <details
-                        class="group bg-white/50 backdrop-blur-sm rounded-2xl border border-gray-100 p-6 shadow-sm">
-                        <summary
-                            class="flex justify-between items-center font-bold cursor-pointer list-none text-[#2B2B2B] hover:text-[#BFA2DB] transition">
-                            ¿Cuáles son los métodos de pago?
-                            <span class="transition group-open:rotate-180"><svg fill="none" height="20"
-                                    stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="20">
-                                    <path d="M6 9l6 6 6-6"></path>
-                                </svg></span>
-                        </summary>
-                        <p class="text-[#4A444A] mt-4 text-sm leading-relaxed">
-                            Aceptamos pagos mediante Tarjetas de Crédito o Débito a través de pasarelas de pago
-                            seguras. El modelo estándar es 50% para iniciar y 50% contra
-                            entrega.
-                        </p>
-                    </details>
-
-                    <details
-                        class="group bg-white/50 backdrop-blur-sm rounded-2xl border border-gray-100 p-6 shadow-sm">
-                        <summary
-                            class="flex justify-between items-center font-bold cursor-pointer list-none text-[#2B2B2B] hover:text-[#BFA2DB] transition">
-                            ¿Tienen facilidades de pago?
-                            <span class="transition group-open:rotate-180"><svg fill="none" height="20"
-                                    stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="20">
-                                    <path d="M6 9l6 6 6-6"></path>
-                                </svg></span>
-                        </summary>
-                        <p class="text-[#4A444A] mt-4 text-sm leading-relaxed">
-                            Para proyectos más grandes, podemos conversar un plan de pagos dividido en hitos de
-                            desarrollo.
-                        </p>
-                    </details>
-
-                    <details
-                        class="group bg-white/50 backdrop-blur-sm rounded-2xl border border-gray-100 p-6 shadow-sm">
-                        <summary
-                            class="flex justify-between items-center font-bold cursor-pointer list-none text-[#2B2B2B] hover:text-[#BFA2DB] transition">
-                            ¿A nombre de quién queda el dominio .cl?
-                            <span class="transition group-open:rotate-180"><svg fill="none" height="20"
-                                    stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="20">
-                                    <path d="M6 9l6 6 6-6"></path>
-                                </svg></span>
-                        </summary>
-                        <p class="text-[#4A444A] mt-4 text-sm leading-relaxed">
-                            Tú eres el dueño legal absoluto. Nosotros realizamos la
-                            gestión técnica, pero el dominio se inscribe con tus datos o los
-                            de tu empresa. En KoaLink creemos en la transparencia y en que
-                            el cliente siempre tenga el control de su activo digital.
-                        </p>
-                    </details>
-
-                    <details
-                        class="group bg-white/50 backdrop-blur-sm rounded-2xl border border-gray-100 p-6 shadow-sm">
-                        <summary
-                            class="flex justify-between items-center font-bold cursor-pointer list-none text-[#2B2B2B] hover:text-[#BFA2DB] transition">
-                            ¿Qué incluye el Plan de Soporte Mensual?
-                            <span class="transition group-open:rotate-180"><svg fill="none" height="20"
-                                    stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="20">
-                                    <path d="M6 9l6 6 6-6"></path>
-                                </svg></span>
-                        </summary>
-                        <p class="text-[#4A444A] mt-4 text-sm leading-relaxed">
-                            Incluye: **Alojamiento (Hosting) de alta velocidad, certificado
-                            SSL (candado de seguridad), monitoreo 24/7, respaldos semanales
-                            y soporte para cambios menores** en los textos o imágenes de tu
-                            sitio.
-                        </p>
-                    </details>
-                </div>
-            </div>
+      <div class="max-w-5xl mx-auto px-6 w-full">
+        <div data-aos="fade-up" class="text-center mb-16">
+          <h2 class="text-4xl font-black text-[#2B2B2B]">
+            Preguntas Frecuentes
+          </h2>
+          <p
+            class="text-[#BFA2DB] font-bold mt-2 uppercase tracking-widest text-sm"
+          >
+            Todo lo que necesitas saber sobre KoaLink
+          </p>
+          <div class="w-16 h-1 bg-[#BFA2DB] mx-auto mt-4 rounded-full"></div>
         </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
+          <div class="space-y-4" data-aos="fade-right">
+            <h3
+              class="text-xs font-black uppercase tracking-[0.2em] text-gray-400 mb-6 pl-2"
+            >
+              Servicios y Planes
+            </h3>
+
+            <details
+              class="group bg-white/50 backdrop-blur-sm rounded-2xl border border-gray-100 p-6 shadow-sm"
+            >
+              <summary
+                class="flex justify-between items-center font-bold cursor-pointer list-none text-[#2B2B2B] hover:text-[#BFA2DB] transition"
+              >
+                ¿Qué incluye exactamente una Landing Page?
+                <span class="transition group-open:rotate-180"
+                  ><svg
+                    fill="none"
+                    height="20"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                    width="20"
+                  >
+                    <path d="M6 9l6 6 6-6"></path></svg
+                ></span>
+              </summary>
+              <p class="text-[#4A444A] mt-4 text-sm leading-relaxed">
+                Es una página única de alto impacto diseñada para convertir
+                visitas en ventas. Incluye diseño responsive, botones directos a
+                WhatsApp, formularios de contacto, integración de Google Maps y
+                optimización de velocidad de carga.
+              </p>
+            </details>
+
+            <details
+              class="group bg-white/50 backdrop-blur-sm rounded-2xl border border-gray-100 p-6 shadow-sm"
+            >
+              <summary
+                class="flex justify-between items-center font-bold cursor-pointer list-none text-[#2B2B2B] hover:text-[#BFA2DB] transition"
+              >
+                ¿Cómo funciona el Plan Creator?
+                <span class="transition group-open:rotate-180"
+                  ><svg
+                    fill="none"
+                    height="20"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                    width="20"
+                  >
+                    <path d="M6 9l6 6 6-6"></path></svg
+                ></span>
+              </summary>
+              <p class="text-[#4A444A] mt-4 text-sm leading-relaxed">
+                Es la evolución del "link en bio". Creamos un sitio web oficial
+                para creadores de contenido que centraliza redes sociales,
+                suscripciones y portafolio, con un diseño premium que evita
+                bloqueos de Instagram o TikTok.
+              </p>
+            </details>
+
+            <details
+              class="group bg-white/50 backdrop-blur-sm rounded-2xl border border-gray-100 p-6 shadow-sm"
+            >
+              <summary
+                class="flex justify-between items-center font-bold cursor-pointer list-none text-[#2B2B2B] hover:text-[#BFA2DB] transition"
+              >
+                ¿Qué secciones tiene una Página Informativa?
+                <span class="transition group-open:rotate-180"
+                  ><svg
+                    fill="none"
+                    height="20"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                    width="20"
+                  >
+                    <path d="M6 9l6 6 6-6"></path></svg
+                ></span>
+              </summary>
+              <p class="text-[#4A444A] mt-4 text-sm leading-relaxed">
+                Es un sitio web corporativo completo. Generalmente incluye:
+                Inicio, Nosotros, Servicios/Productos, Portafolio o Galería,
+                Preguntas Frecuentes y Contacto. Ideal para empresas que buscan
+                proyectar seriedad y confianza.
+              </p>
+            </details>
+          </div>
+
+          <div class="space-y-4" data-aos="fade-left">
+            <h3
+              class="text-xs font-black uppercase tracking-[0.2em] text-gray-400 mb-6 pl-2"
+            >
+              Pagos y Condiciones
+            </h3>
+
+            <details
+              class="group bg-white/50 backdrop-blur-sm rounded-2xl border border-gray-100 p-6 shadow-sm"
+            >
+              <summary
+                class="flex justify-between items-center font-bold cursor-pointer list-none text-[#2B2B2B] hover:text-[#BFA2DB] transition"
+              >
+                ¿Cuáles son los métodos de pago?
+                <span class="transition group-open:rotate-180"
+                  ><svg
+                    fill="none"
+                    height="20"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                    width="20"
+                  >
+                    <path d="M6 9l6 6 6-6"></path></svg
+                ></span>
+              </summary>
+              <p class="text-[#4A444A] mt-4 text-sm leading-relaxed">
+                Aceptamos pagos mediante Tarjetas de Crédito o Débito a través
+                de pasarelas de pago seguras. El modelo estándar es 50% para
+                iniciar y 50% contra entrega.
+              </p>
+            </details>
+
+            <details
+              class="group bg-white/50 backdrop-blur-sm rounded-2xl border border-gray-100 p-6 shadow-sm"
+            >
+              <summary
+                class="flex justify-between items-center font-bold cursor-pointer list-none text-[#2B2B2B] hover:text-[#BFA2DB] transition"
+              >
+                ¿Tienen facilidades de pago?
+                <span class="transition group-open:rotate-180"
+                  ><svg
+                    fill="none"
+                    height="20"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                    width="20"
+                  >
+                    <path d="M6 9l6 6 6-6"></path></svg
+                ></span>
+              </summary>
+              <p class="text-[#4A444A] mt-4 text-sm leading-relaxed">
+                Para proyectos más grandes, podemos conversar un plan de pagos
+                dividido en hitos de desarrollo.
+              </p>
+            </details>
+
+            <details
+              class="group bg-white/50 backdrop-blur-sm rounded-2xl border border-gray-100 p-6 shadow-sm"
+            >
+              <summary
+                class="flex justify-between items-center font-bold cursor-pointer list-none text-[#2B2B2B] hover:text-[#BFA2DB] transition"
+              >
+                ¿A nombre de quién queda el dominio .cl?
+                <span class="transition group-open:rotate-180"
+                  ><svg
+                    fill="none"
+                    height="20"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                    width="20"
+                  >
+                    <path d="M6 9l6 6 6-6"></path></svg
+                ></span>
+              </summary>
+              <p class="text-[#4A444A] mt-4 text-sm leading-relaxed">
+                Tú eres el dueño legal absoluto. Nosotros realizamos la gestión
+                técnica, pero el dominio se inscribe con tus datos o los de tu
+                empresa. En KoaLink creemos en la transparencia y en que el
+                cliente siempre tenga el control de su activo digital.
+              </p>
+            </details>
+
+            <details
+              class="group bg-white/50 backdrop-blur-sm rounded-2xl border border-gray-100 p-6 shadow-sm"
+            >
+              <summary
+                class="flex justify-between items-center font-bold cursor-pointer list-none text-[#2B2B2B] hover:text-[#BFA2DB] transition"
+              >
+                ¿Qué incluye el Plan de Soporte Mensual?
+                <span class="transition group-open:rotate-180"
+                  ><svg
+                    fill="none"
+                    height="20"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                    width="20"
+                  >
+                    <path d="M6 9l6 6 6-6"></path></svg
+                ></span>
+              </summary>
+              <p class="text-[#4A444A] mt-4 text-sm leading-relaxed">
+                Incluye: **Alojamiento (Hosting) de alta velocidad, certificado
+                SSL (candado de seguridad), monitoreo 24/7, respaldos semanales
+                y soporte para cambios menores** en los textos o imágenes de tu
+                sitio.
+              </p>
+            </details>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- FOOTER/CONTACTO: Sección final con CTA principal y enlace directo a WhatsApp -->
     <!-- Incluye gradiente decorativo y datos mínimos de copyright -->
-    <footer id="contacto"
-        class="min-h-screen flex flex-col justify-center items-center bg-[#2B2B2B] text-white px-6 py-24 text-center relative overflow-hidden">
-        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#BFA2DB] to-transparent">
+    <footer
+      id="contacto"
+      class="min-h-screen flex flex-col justify-center items-center bg-[#2B2B2B] text-white px-6 py-24 text-center relative overflow-hidden"
+    >
+      <div
+        class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#BFA2DB] to-transparent"
+      ></div>
+      <div class="max-w-4xl w-full text-center" data-aos="fade-up">
+        <h2 class="text-3xl md:text-5xl font-black mb-6">
+          ¿Listo para el <span class="text-[#BFA2DB]">siguiente nivel?</span>
+        </h2>
+        <p class="text-gray-400 mb-10 max-w-lg mx-auto text-lg">
+          Construyamos juntos una presencia digital imbatible y segura.
+        </p>
+        <div class="flex flex-wrap justify-center gap-4 mb-16">
+          <a
+            href="https://wa.me/56966888378"
+            target="_blank"
+            class="bg-[#BFA2DB] hover:bg-[#a889c7] text-white px-10 py-4 rounded-2xl font-bold transition-all shadow-lg shadow-[#BFA2DB]/20"
+            >WhatsApp</a
+          >
         </div>
-        <div class="max-w-4xl w-full text-center" data-aos="fade-up">
-            <h2 class="text-3xl md:text-5xl font-black mb-6">
-                ¿Listo para el <span class="text-[#BFA2DB]">siguiente nivel?</span>
-            </h2>
-            <p class="text-gray-400 mb-10 max-w-lg mx-auto text-lg">
-                Construyamos juntos una presencia digital imbatible y segura.
-            </p>
-            <div class="flex flex-wrap justify-center gap-4 mb-16">
-                <a href="https://wa.me/56966888378" target="_blank"
-                    class="bg-[#BFA2DB] hover:bg-[#a889c7] text-white px-10 py-4 rounded-2xl font-bold transition-all shadow-lg shadow-[#BFA2DB]/20">WhatsApp</a>
-            </div>
-            <div class="mt-12 text-[10px] text-gray-600 uppercase tracking-[0.2em]">
-                © 2026 KoaLink | Hecho con html - tailwindcss
-            </div>
+        <div class="mt-12 text-[10px] text-gray-600 uppercase tracking-[0.2em]">
+          © 2026 KoaLink | Hecho con html - tailwindcss
         </div>
+      </div>
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
+      /**
+       * ==================================================================
+       * SCRIPT PRINCIPAL - KOALINK LANDING PAGE
+       * ==================================================================
+       * Optimizaciones de rendimiento:
+       * - DOMContentLoaded para evitar bloqueos de render
+       * - Uso de event delegation para mejorar eficiencia
+       * - Eliminadas referencias a elementos que no existen en el DOM
+       * ==================================================================
+       */
+
+      document.addEventListener("DOMContentLoaded", () => {
         /**
-         * ==================================================================
-         * SCRIPT PRINCIPAL - KOALINK LANDING PAGE
-         * ==================================================================
-         * Optimizaciones de rendimiento:
-         * - DOMContentLoaded para evitar bloqueos de render
-         * - Uso de event delegation para mejorar eficiencia
-         * - Eliminadas referencias a elementos que no existen en el DOM
-         * ==================================================================
+         * SECCIÓN 1: INICIALIZACIÓN DE ANIMACIONES (AOS)
+         * AOS permite animar elementos cuando entran en el viewport
+         * Configuración optimizada para no afectar rendimiento inicial
          */
-
-        document.addEventListener('DOMContentLoaded', () => {
-
-            /**
-             * SECCIÓN 1: INICIALIZACIÓN DE ANIMACIONES (AOS)
-             * AOS permite animar elementos cuando entran en el viewport
-             * Configuración optimizada para no afectar rendimiento inicial
-             */
-            AOS.init({
-                duration: 800,      // Duración de animación en ms
-                once: true,         // Solo animar una vez (evita repetición)
-                offset: 100         // Trigger 100px antes de que el elemento sea visible
-            });
-
-            /**
-             * SECCIÓN 2: NAVEGACIÓN SUAVE SIN HASH EN URL
-             * - Detecta clicks en enlaces internos (#)
-             * - Compensa altura del navbar (80px)
-             * - Scroll suave hacia la sección
-             * - Evita que aparezca '#' en la URL
-             */
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    const targetId = this.getAttribute('href');
-
-                    // Solo procesar si es un ID válido
-                    if (targetId.startsWith('#') && targetId.length > 1) {
-                        e.preventDefault();
-
-                        const targetElement = document.querySelector(targetId);
-                        if (targetElement) {
-                            // Offset para compensar el navbar fijo
-                            const offset = 80;
-                            const targetPosition = targetElement.offsetTop - offset;
-
-                            // Scroll suave hacia el objetivo
-                            window.scrollTo({
-                                top: targetPosition,
-                                behavior: 'smooth'
-                            });
-                        }
-                    }
-                });
-            });
-
-            /**
-             * SECCIÓN 3: EFECTO VISUAL DEL NAVBAR AL HACER SCROLL
-             * Añade sombra dinámica cuando el usuario hace scroll
-             * Mejora la legibilidad visual del contenido
-             */
-            const navbar = document.getElementById('navbar');
-            if (navbar) {
-                window.addEventListener('scroll', () => {
-                    if (window.scrollY > 50) {
-                        // Navbar "sólido" después de 50px de scroll
-                        navbar.classList.add('bg-white/90', 'shadow-md');
-                    } else {
-                        // Navbar transparente en el top
-                        navbar.classList.remove('bg-white/90', 'shadow-md');
-                    }
-                }, { passive: true }); // Passive listener para mejor rendimiento
-            }
+        AOS.init({
+          duration: 800, // Duración de animación en ms
+          once: true, // Solo animar una vez (evita repetición)
+          offset: 100, // Trigger 100px antes de que el elemento sea visible
         });
-    </script>
-</body>
 
+        /**
+         * SECCIÓN 2: NAVEGACIÓN SUAVE SIN HASH EN URL
+         * - Detecta clicks en enlaces internos (#)
+         * - Compensa altura del navbar (80px)
+         * - Scroll suave hacia la sección
+         * - Evita que aparezca '#' en la URL
+         */
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener("click", function (e) {
+            const targetId = this.getAttribute("href");
+
+            // Solo procesar si es un ID válido
+            if (targetId.startsWith("#") && targetId.length > 1) {
+              e.preventDefault();
+
+              const targetElement = document.querySelector(targetId);
+              if (targetElement) {
+                // Offset para compensar el navbar fijo
+                const offset = 80;
+                const targetPosition = targetElement.offsetTop - offset;
+
+                // Scroll suave hacia el objetivo
+                window.scrollTo({
+                  top: targetPosition,
+                  behavior: "smooth",
+                });
+              }
+            }
+          });
+        });
+
+        /**
+         * SECCIÓN 3: EFECTO VISUAL DEL NAVBAR AL HACER SCROLL
+         * Añade sombra dinámica cuando el usuario hace scroll
+         * Mejora la legibilidad visual del contenido
+         */
+        const navbar = document.getElementById("navbar");
+        if (navbar) {
+          window.addEventListener(
+            "scroll",
+            () => {
+              if (window.scrollY > 50) {
+                // Navbar "sólido" después de 50px de scroll
+                navbar.classList.add("bg-white/90", "shadow-md");
+              } else {
+                // Navbar transparente en el top
+                navbar.classList.remove("bg-white/90", "shadow-md");
+              }
+            },
+            { passive: true },
+          ); // Passive listener para mejor rendimiento
+        }
+      });
+    </script>
+  </body>
 </html>
